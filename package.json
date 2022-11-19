@@ -4,6 +4,10 @@
   "description": "A set of JavaScript / TypeScript helper functions for parsing, converting, transforming and formatting data.",
   "author": "Sergey Steinvil <sergey.steinvil@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "url": "https://github.com/js-data-tools/js-helpers",
+    "type": "git"
+  },
   "keywords": [ "javascript", "typescript", "helpers", "library", "convert", "format", "iterators", "generators", "JSON lines", "NDJSON" ],
   "main": "dist/csj/index.js",
   "module": "dist/esm/index.js",
@@ -20,7 +24,7 @@
     "build": "pnpm run compile:node & pnpm run compile:esm",
     "test": "jest",
     "test:coverage": "jest --collect-coverage",
-    "doc:generate": "typedoc --plugin typedoc-plugin-markdown --out docs/ref src/index.ts"
+    "doc:generate": "typedoc --tsconfig tsconfig.lint.json --plugin typedoc-plugin-markdown --out docs/ref src/index.ts"
   },
   "packageManager": "pnpm@7.16.1",
   "devDependencies": {
