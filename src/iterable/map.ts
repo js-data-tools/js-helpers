@@ -1,7 +1,7 @@
 /**
  * Create a transforming proxy for asynchronous stream of values.
  * 
- * @description This function by itself does not iterate the source collection, it just creates a wrapper iterator.
+ * @description This function does not iterate the source collection by itself, it just creates a wrapper iterator.
  * When caller asks for the next entry, the wrapper iterator delegates the call to the internal (source) iterator,
  * then applies the given transformation function on that entry and returns the transformation result to caller.
  * 

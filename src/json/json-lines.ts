@@ -6,8 +6,8 @@ import { map, mapAsync } from "../iterable";
  * @since 1.0.0
  * @category json
  * @param {Iterable<string>} textLines - The enumerable collection of text lines to parse - every entry is supposed to be a valid JSON text to parse
- * @param {(this: any, key: string, value: any) => any} [reviver] An optional reviver object (see @see JSON.parse)
- * @returns {Iterable<T>} The iterable collection of parsed objects (optimized for streaming)
+ * @param {(this: any, key: string, value: any) => any} [reviver] An optional reviver object (see {@link JSON#parse})
+ * @returns {Iterable<T>} An iterable collection of parsed values.
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function parseJsonLines<T>(textLines: Iterable<string>, reviver?: (this: any, key: string, value: any) => any): Iterable<T> {
@@ -19,9 +19,9 @@ export function parseJsonLines<T>(textLines: Iterable<string>, reviver?: (this: 
  * 
  * @since 1.0.0
  * @category json
- * @param {AsyncIterable<string>} textLines Enumerable collection of text lines to parse (async) - every entry is supposed to be a valid JSON text to parse
- * @param {(this: any, key: string, value: any) => any} [reviver] An optional reviver object (see @see JSON.parse)
- * @returns {AsyncIterable<T>} The iterable collection of parsed objects (optimized for streaming)
+ * @param {AsyncIterable<string>} textLines - The enumerable async stream of text lines to parse - every entry is supposed to be a valid JSON.
+ * @param {(this: any, key: string, value: any) => any} [reviver] An optional reviver object (see {@link JSON#parse})
+ * @returns {AsyncIterable<T>} An iterable asynchronous stream of parsed values.
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function parseJsonLinesAsync<T>(textLines: AsyncIterable<string>, reviver?: (this: any, key: string, value: any) => any): AsyncIterable<T> {
@@ -29,11 +29,11 @@ export function parseJsonLinesAsync<T>(textLines: AsyncIterable<string>, reviver
 }
 
 /**
- * Renders a given value as JSON line (NDJSON format)
+ * Render the given value as an NDJSON entry: a JSON without whitespaces, followed by a line break.
  * 
  * @since 1.0.0
  * @category json
- * @param value The value to render as a JSON line
+ * @param value - The value to render as an NDJSON (JSON line).
  * @returns {string} A string with JSON representation of the given value (no whitespaces or line breaks in the middle), followed by a line break.
  * @example
  * 

@@ -21,7 +21,7 @@ export class ProgressReporter {
 
     /**
      * Constructs a new ProgressReporter
-     * @param {ProgressLogCallback} [logCallback] - A callback function for printing a progress log message
+     * @param {ProgressLogCallback} [logCallback] - The callback function for printing a progress log message
      * @param {number} [reportPeriodMsec=1000] - The minimal amount of milliseconds to pass between two subsequent progress messages.
      */
     constructor(logCallback?: ProgressLogCallback, reportPeriodMsec?: number) {
