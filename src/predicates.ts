@@ -37,7 +37,7 @@ export function isNullOrUndefined<T>(input: T | null | undefined): boolean {
  * @param input - A value to inspect
  * @returns {boolean} false if the input value is null or undefined, otherwise true.
  */
-export function notNullOrUndefined<T>(input: T | null | undefined): boolean {
+export function notNullOrUndefined<T>(input: T | null | undefined): input is T {
     return input !== undefined && input !== null;
 }
 
@@ -61,7 +61,7 @@ export function isEmptyArray<T>(input: Array<T> | null | undefined): boolean {
  * @param {Array} input - An array to inspect
  * @returns {boolean} true if given array exists (not null / undefined) and contains at least one element.
  */
-export function isNonEmptyArray<T>(input: Array<T> | null | undefined): boolean {
+export function isNonEmptyArray<T>(input: Array<T> | null | undefined): input is Array<T> {
     return Array.isArray(input) && input.length > 0;
 }
 
@@ -85,7 +85,7 @@ export function isEmptySet<T>(input: Set<T> | null | undefined): boolean {
  * @param {Set} input - A set to inspect
  * @returns {boolean} true if given set exists (not null / undefined) and contains at least one element.
  */
-export function isNonEmptySet<T>(input: Set<T> | null | undefined): boolean {
+export function isNonEmptySet<T>(input: Set<T> | null | undefined): input is Set<T> {
     return !!input && input.size > 0;
 }
 
@@ -109,7 +109,7 @@ export function isEmptyMap<K, V>(input: Map<K, V> | null | undefined): boolean {
  * @param {Map} input - A map to inspect
  * @returns {boolean} true if given map exists (not null / undefined) and contains at least one element.
  */
-export function isNonEmptyMap<K, V>(input: Map<K, V> | null | undefined): boolean {
+export function isNonEmptyMap<K, V>(input: Map<K, V> | null | undefined): input is Map<K, V> {
     return !!input && input.size > 0;
 }
 
@@ -133,32 +133,13 @@ export function isEmptyObject<T extends object>(input: T | null | undefined): bo
  * @param input - An object to inspect.
  * @returns {boolean} true if given object is not null / undefined and contains at least one property.
  */
-export function isNonEmptyObject<T extends object>(input: T | null | undefined): boolean {
+export function isNonEmptyObject<T extends object>(input: T | null | undefined): input is T {
     return !!input && Object.keys(input).length > 0;
 }
 
 // ---------------------------------------------------------------------------------------
 // Compose filters
 // ---------------------------------------------------------------------------------------
-function removeEmptyPredicates<T>(
-    predicates: Array<Predicate<T> | null | undefined>
-): Array<Predicate<T>> | null | undefined {
-    let target: Array<Predicate<T>> | undefined;
-
-    for (let i = 0; i < predicates.length; ++i) {
-        const item = predicates[i];
-        if (!item) {
-            // We should skip the current item
-            if (!target) {
-                target = [];
-            }
-        } else if (target) {
-            target.push(item);
-        }
-    }
-    return target ?? <Array<Predicate<T>>>predicates;
-}
-
 /**
  * Composes a predicate, which will check if given value satisfies all inner conditions.
  * 
@@ -168,7 +149,7 @@ function removeEmptyPredicates<T>(
  * @returns A new {@link Predicate}, which evaluate given conditions on an input value and return true if all conditions are met.
  */
 export function and<T>(...predicates: Array<Predicate<T> | null | undefined>): Predicate<T> {
-    const conditions = removeEmptyPredicates(predicates);
+    const conditions = predicates?.filter(notNullOrUndefined);
     if (!conditions || conditions.length === 0) {
         return alwaysTrue;
     }
@@ -187,7 +168,7 @@ export function and<T>(...predicates: Array<Predicate<T> | null | undefined>): P
  * @returns A new {@link Predicate}, which evaluate given conditions on an input value and return true if at least one of inner conditions is met.
  */
  export function or<T>(...predicates: Array<Predicate<T> | null | undefined>): Predicate<T> {
-    const conditions = removeEmptyPredicates(predicates);
+    const conditions = predicates?.filter(notNullOrUndefined);
     if (!conditions || conditions.length === 0) {
         return alwaysTrue;
     }
