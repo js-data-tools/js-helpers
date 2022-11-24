@@ -53,7 +53,7 @@ Constructs a new ProgressReporter
 
 #### Defined in
 
-[progress.ts:27](https://github.com/js-data-tools/js-helpers/blob/290463f/src/progress.ts#L27)
+[progress.ts:27](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/progress.ts#L27)
 
 ## Properties
 
@@ -63,7 +63,7 @@ Constructs a new ProgressReporter
 
 #### Defined in
 
-[progress.ts:16](https://github.com/js-data-tools/js-helpers/blob/290463f/src/progress.ts#L16)
+[progress.ts:16](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/progress.ts#L16)
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 #### Defined in
 
-[progress.ts:17](https://github.com/js-data-tools/js-helpers/blob/290463f/src/progress.ts#L17)
+[progress.ts:17](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/progress.ts#L17)
 
 ___
 
@@ -83,7 +83,7 @@ ___
 
 #### Defined in
 
-[progress.ts:18](https://github.com/js-data-tools/js-helpers/blob/290463f/src/progress.ts#L18)
+[progress.ts:18](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/progress.ts#L18)
 
 ___
 
@@ -93,7 +93,7 @@ ___
 
 #### Defined in
 
-[progress.ts:20](https://github.com/js-data-tools/js-helpers/blob/290463f/src/progress.ts#L20)
+[progress.ts:20](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/progress.ts#L20)
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 #### Defined in
 
-[progress.ts:19](https://github.com/js-data-tools/js-helpers/blob/290463f/src/progress.ts#L19)
+[progress.ts:19](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/progress.ts#L19)
 
 ___
 
@@ -113,7 +113,7 @@ ___
 
 #### Defined in
 
-[progress.ts:15](https://github.com/js-data-tools/js-helpers/blob/290463f/src/progress.ts#L15)
+[progress.ts:15](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/progress.ts#L15)
 
 ___
 
@@ -140,7 +140,7 @@ ___
 
 #### Defined in
 
-[progress.ts:93](https://github.com/js-data-tools/js-helpers/blob/290463f/src/progress.ts#L93)
+[progress.ts:93](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/progress.ts#L93)
 
 ## Methods
 
@@ -156,7 +156,7 @@ Inform the progress monitor about another entry that was processed.  It will pro
 
 #### Defined in
 
-[progress.ts:48](https://github.com/js-data-tools/js-helpers/blob/290463f/src/progress.ts#L48)
+[progress.ts:48](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/progress.ts#L48)
 
 ___
 
@@ -178,7 +178,7 @@ Prints the current progress.  Usually called internally
 
 #### Defined in
 
-[progress.ts:77](https://github.com/js-data-tools/js-helpers/blob/290463f/src/progress.ts#L77)
+[progress.ts:77](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/progress.ts#L77)
 
 ___
 
@@ -194,7 +194,7 @@ Starts monitoring the progress of stream processing.
 
 #### Defined in
 
-[progress.ts:39](https://github.com/js-data-tools/js-helpers/blob/290463f/src/progress.ts#L39)
+[progress.ts:39](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/progress.ts#L39)
 
 ___
 
@@ -210,7 +210,7 @@ Stops monitoring the progress of stream processing.  This method should be calle
 
 #### Defined in
 
-[progress.ts:59](https://github.com/js-data-tools/js-helpers/blob/290463f/src/progress.ts#L59)
+[progress.ts:59](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/progress.ts#L59)
 
 ___
 
@@ -226,7 +226,7 @@ Stops monitoring and reports the overall benchmarking.  A shortcut for this.stop
 
 #### Defined in
 
-[progress.ts:68](https://github.com/js-data-tools/js-helpers/blob/290463f/src/progress.ts#L68)
+[progress.ts:68](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/progress.ts#L68)
 
 ___
 
@@ -248,7 +248,7 @@ ___
 
 #### Defined in
 
-[progress.ts:96](https://github.com/js-data-tools/js-helpers/blob/290463f/src/progress.ts#L96)
+[progress.ts:96](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/progress.ts#L96)
 
 ___
 
@@ -271,7 +271,7 @@ ___
 
 #### Defined in
 
-[progress.ts:85](https://github.com/js-data-tools/js-helpers/blob/290463f/src/progress.ts#L85)
+[progress.ts:85](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/progress.ts#L85)
 
 ___
 
@@ -294,4 +294,4 @@ ___
 
 #### Defined in
 
-[progress.ts:89](https://github.com/js-data-tools/js-helpers/blob/290463f/src/progress.ts#L89)
+[progress.ts:89](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/progress.ts#L89)

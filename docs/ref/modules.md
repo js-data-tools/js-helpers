@@ -99,7 +99,7 @@ An IPv4 address, represented either as string ("212.143.78.11") or as a 4-bytes 
 
 #### Defined in
 
-[convert/ip.ts:6](https://github.com/js-data-tools/js-helpers/blob/290463f/src/convert/ip.ts#L6)
+[convert/ip.ts:6](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/convert/ip.ts#L6)
 
 ___
 
@@ -129,7 +129,7 @@ ___
 
 #### Defined in
 
-[predicates.ts:1](https://github.com/js-data-tools/js-helpers/blob/290463f/src/predicates.ts#L1)
+[predicates.ts:1](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/predicates.ts#L1)
 
 ___
 
@@ -156,7 +156,7 @@ ___
 
 #### Defined in
 
-[progress.ts:4](https://github.com/js-data-tools/js-helpers/blob/290463f/src/progress.ts#L4)
+[progress.ts:4](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/progress.ts#L4)
 
 ## Variables
 
@@ -166,7 +166,7 @@ ___
 
 #### Defined in
 
-[format.ts:4](https://github.com/js-data-tools/js-helpers/blob/290463f/src/format.ts#L4)
+[format.ts:4](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/format.ts#L4)
 
 ___
 
@@ -176,7 +176,7 @@ ___
 
 #### Defined in
 
-[format.ts:5](https://github.com/js-data-tools/js-helpers/blob/290463f/src/format.ts#L5)
+[format.ts:5](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/format.ts#L5)
 
 ___
 
@@ -186,7 +186,7 @@ ___
 
 #### Defined in
 
-[format.ts:3](https://github.com/js-data-tools/js-helpers/blob/290463f/src/format.ts#L3)
+[format.ts:3](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/format.ts#L3)
 
 ## Other Functions
 
@@ -231,7 +231,7 @@ true if a and b are equal, otherwise false.  This function assumes that null ===
 
 #### Defined in
 
-[convert/ip.ts:95](https://github.com/js-data-tools/js-helpers/blob/290463f/src/convert/ip.ts#L95)
+[convert/ip.ts:95](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/convert/ip.ts#L95)
 
 ___
 
@@ -264,7 +264,7 @@ The array, continung two numbers: the compact and power.
 
 #### Defined in
 
-[convert/numeric.ts:47](https://github.com/js-data-tools/js-helpers/blob/290463f/src/convert/numeric.ts#L47)
+[convert/numeric.ts:47](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/convert/numeric.ts#L47)
 
 ___
 
@@ -302,7 +302,7 @@ A numeric represetnation of the specified IP address.
 
 #### Defined in
 
-[convert/ip.ts:61](https://github.com/js-data-tools/js-helpers/blob/290463f/src/convert/ip.ts#L61)
+[convert/ip.ts:61](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/convert/ip.ts#L61)
 
 ___
 
@@ -346,7 +346,7 @@ A string represetnation of the specified IP address.
 
 #### Defined in
 
-[convert/ip.ts:29](https://github.com/js-data-tools/js-helpers/blob/290463f/src/convert/ip.ts#L29)
+[convert/ip.ts:29](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/convert/ip.ts#L29)
 
 ___
 
@@ -390,7 +390,7 @@ The numeric representation of the given MAC address.  This function returns the 
 
 #### Defined in
 
-[convert/mac.ts:111](https://github.com/js-data-tools/js-helpers/blob/290463f/src/convert/mac.ts#L111)
+[convert/mac.ts:111](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/convert/mac.ts#L111)
 
 ___
 
@@ -438,7 +438,7 @@ The MAC address, formatted using specified  delimiter.
 
 #### Defined in
 
-[convert/mac.ts:32](https://github.com/js-data-tools/js-helpers/blob/290463f/src/convert/mac.ts#L32)
+[convert/mac.ts:32](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/convert/mac.ts#L32)
 
 ___
 
@@ -475,7 +475,7 @@ The given number, rounded to the requested number of decimal digits.
 
 #### Defined in
 
-[convert/numeric.ts:18](https://github.com/js-data-tools/js-helpers/blob/290463f/src/convert/numeric.ts#L18)
+[convert/numeric.ts:18](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/convert/numeric.ts#L18)
 
 ___
 
@@ -512,7 +512,7 @@ A compact form of the given number (usually up to 5 characters).
 
 #### Defined in
 
-[format.ts:44](https://github.com/js-data-tools/js-helpers/blob/290463f/src/format.ts#L44)
+[format.ts:44](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/format.ts#L44)
 
 ___
 
@@ -549,7 +549,7 @@ A string with a compact version of size (1.27GB)
 
 #### Defined in
 
-[format.ts:24](https://github.com/js-data-tools/js-helpers/blob/290463f/src/format.ts#L24)
+[format.ts:24](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/format.ts#L24)
 
 ___
 
@@ -557,7 +557,7 @@ ___
 
 ### filter
 
-▸ **filter**<`T`\>(`from`, `predicate?`): `Iterable`<`T`\>
+▸ **filter**<`T`\>(`from`, `predicate?`): `Generator`<`T`, `void`, `undefined`\>
 
 Filter elements of the iterable collection, using the given predicate function.
 
@@ -586,20 +586,20 @@ iterator, skipping values that do not pass the given filter.
 
 #### Returns
 
-`Iterable`<`T`\>
+`Generator`<`T`, `void`, `undefined`\>
 
 A new iterable object, which, when iterated, will return elements from the inner collection, filtered with the given predicate (e.g. only 
 those that the predicate returns true for them)
 
 #### Defined in
 
-[iterable/select.ts:15](https://github.com/js-data-tools/js-helpers/blob/290463f/src/iterable/select.ts#L15)
+[iterable/select.ts:15](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/select.ts#L15)
 
 ___
 
 ### filterAsync
 
-▸ **filterAsync**<`T`\>(`from`, `predicate?`): `AsyncIterable`<`T`\>
+▸ **filterAsync**<`T`\>(`from`, `predicate?`): `AsyncGenerator`<`T`, `void`, `undefined`\>
 
 Filter elements of the given iterable collection, using given predicate function.
 
@@ -622,17 +622,17 @@ Filter elements of the given iterable collection, using given predicate function
 
 #### Returns
 
-`AsyncIterable`<`T`\>
+`AsyncGenerator`<`T`, `void`, `undefined`\>
 
 #### Defined in
 
-[iterable/select.ts:178](https://github.com/js-data-tools/js-helpers/blob/290463f/src/iterable/select.ts#L178)
+[iterable/select.ts:178](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/select.ts#L178)
 
 ___
 
 ### map
 
-▸ **map**<`T`, `U`\>(`source`, `transform`): `Iterable`<`U`\>
+▸ **map**<`T`, `U`\>(`source`, `transform`): `Generator`<`U`\>
 
 Create a transforming proxy for synchronous stream of values (iterable collection).
 
@@ -662,19 +662,19 @@ then applies the given transformation function on that entry and returns the tra
 
 #### Returns
 
-`Iterable`<`U`\>
+`Generator`<`U`\>
 
 A new iterable stream of transformed values.
 
 #### Defined in
 
-[iterable/map.ts:33](https://github.com/js-data-tools/js-helpers/blob/290463f/src/iterable/map.ts#L33)
+[iterable/map.ts:33](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/map.ts#L33)
 
 ___
 
 ### mapAsync
 
-▸ **mapAsync**<`T`, `U`\>(`source`, `transform`): `AsyncIterable`<`U`\>
+▸ **mapAsync**<`T`, `U`\>(`source`, `transform`): `AsyncGenerator`<`U`\>
 
 Create a transforming proxy for asynchronous stream of values.
 
@@ -704,19 +704,19 @@ then applies the given transformation function on that entry and returns the tra
 
 #### Returns
 
-`AsyncIterable`<`U`\>
+`AsyncGenerator`<`U`\>
 
 A new iterable stream of transformed values (asynchronous).
 
 #### Defined in
 
-[iterable/map.ts:14](https://github.com/js-data-tools/js-helpers/blob/290463f/src/iterable/map.ts#L14)
+[iterable/map.ts:14](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/map.ts#L14)
 
 ___
 
 ### skipAsync
 
-▸ **skipAsync**<`T`\>(`from`, `count`): `AsyncIterable`<`T`\>
+▸ **skipAsync**<`T`\>(`from`, `count`): `AsyncGenerator`<`T`, `void`, `undefined`\>
 
 Skip (up to) first N elements of the given iterable collection.
 
@@ -739,17 +739,17 @@ Skip (up to) first N elements of the given iterable collection.
 
 #### Returns
 
-`AsyncIterable`<`T`\>
+`AsyncGenerator`<`T`, `void`, `undefined`\>
 
 #### Defined in
 
-[iterable/select.ts:265](https://github.com/js-data-tools/js-helpers/blob/290463f/src/iterable/select.ts#L265)
+[iterable/select.ts:265](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/select.ts#L265)
 
 ___
 
 ### skipUntil
 
-▸ **skipUntil**<`T`\>(`from`, `condition`): `Iterable`<`T`\>
+▸ **skipUntil**<`T`\>(`from`, `condition`): `Generator`<`T`, `void`, `undefined`\>
 
 Skip first elements of the iterable collection until one of them matches a given condition.
 
@@ -772,17 +772,17 @@ Skip first elements of the iterable collection until one of them matches a given
 
 #### Returns
 
-`Iterable`<`T`\>
+`Generator`<`T`, `void`, `undefined`\>
 
 #### Defined in
 
-[iterable/select.ts:166](https://github.com/js-data-tools/js-helpers/blob/290463f/src/iterable/select.ts#L166)
+[iterable/select.ts:166](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/select.ts#L166)
 
 ___
 
 ### skipUntilAsync
 
-▸ **skipUntilAsync**<`T`\>(`from`, `condition`): `AsyncIterable`<`T`\>
+▸ **skipUntilAsync**<`T`\>(`from`, `condition`): `AsyncGenerator`<`T`, `void`, `undefined`\>
 
 Skip first elements of the iterable collection until one of them matches a given condition.
 
@@ -805,17 +805,17 @@ Skip first elements of the iterable collection until one of them matches a given
 
 #### Returns
 
-`AsyncIterable`<`T`\>
+`AsyncGenerator`<`T`, `void`, `undefined`\>
 
 #### Defined in
 
-[iterable/select.ts:318](https://github.com/js-data-tools/js-helpers/blob/290463f/src/iterable/select.ts#L318)
+[iterable/select.ts:318](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/select.ts#L318)
 
 ___
 
 ### skipWhile
 
-▸ **skipWhile**<`T`\>(`from`, `condition`): `Iterable`<`T`\>
+▸ **skipWhile**<`T`\>(`from`, `condition`): `Generator`<`T`, `void`, `undefined`\>
 
 Skip first elements of the iterable collection, while they match a given condition.
 
@@ -838,17 +838,17 @@ Skip first elements of the iterable collection, while they match a given conditi
 
 #### Returns
 
-`Iterable`<`T`\>
+`Generator`<`T`, `void`, `undefined`\>
 
 #### Defined in
 
-[iterable/select.ts:136](https://github.com/js-data-tools/js-helpers/blob/290463f/src/iterable/select.ts#L136)
+[iterable/select.ts:136](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/select.ts#L136)
 
 ___
 
 ### skipWhileAsync
 
-▸ **skipWhileAsync**<`T`\>(`from`, `condition`): `AsyncIterable`<`T`\>
+▸ **skipWhileAsync**<`T`\>(`from`, `condition`): `AsyncGenerator`<`T`, `void`, `undefined`\>
 
 Skip first elements of the iterable collection, while they match a given condition.
 
@@ -871,17 +871,17 @@ Skip first elements of the iterable collection, while they match a given conditi
 
 #### Returns
 
-`AsyncIterable`<`T`\>
+`AsyncGenerator`<`T`, `void`, `undefined`\>
 
 #### Defined in
 
-[iterable/select.ts:288](https://github.com/js-data-tools/js-helpers/blob/290463f/src/iterable/select.ts#L288)
+[iterable/select.ts:288](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/select.ts#L288)
 
 ___
 
 ### take
 
-▸ **take**<`T`\>(`from`, `count`): `Iterable`<`T`\>
+▸ **take**<`T`\>(`from`, `count`): `Generator`<`T`, `void`, `undefined`\>
 
 Take (up to) first N elements of the given iterable collection.
 
@@ -915,17 +915,17 @@ is the source collection is shorter than <count>).
 
 #### Returns
 
-`Iterable`<`T`\>
+`Generator`<`T`, `void`, `undefined`\>
 
 #### Defined in
 
-[iterable/select.ts:45](https://github.com/js-data-tools/js-helpers/blob/290463f/src/iterable/select.ts#L45)
+[iterable/select.ts:45](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/select.ts#L45)
 
 ___
 
 ### takeAsync
 
-▸ **takeAsync**<`T`\>(`from`, `count`): `AsyncIterable`<`T`\>
+▸ **takeAsync**<`T`\>(`from`, `count`): `AsyncGenerator`<`T`, `void`, `undefined`\>
 
 Take (up to) first N elements of the given iterable collection.
 
@@ -948,17 +948,17 @@ Take (up to) first N elements of the given iterable collection.
 
 #### Returns
 
-`AsyncIterable`<`T`\>
+`AsyncGenerator`<`T`, `void`, `undefined`\>
 
 #### Defined in
 
-[iterable/select.ts:202](https://github.com/js-data-tools/js-helpers/blob/290463f/src/iterable/select.ts#L202)
+[iterable/select.ts:202](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/select.ts#L202)
 
 ___
 
 ### takeUntil
 
-▸ **takeUntil**<`T`\>(`from`, `condition`): `Iterable`<`T`\>
+▸ **takeUntil**<`T`\>(`from`, `condition`): `Generator`<`T`, `void`, `undefined`\>
 
 Enumerate elements of the given iterable collection, until some element satisfies the given condition (predicate).
 
@@ -981,17 +981,17 @@ Enumerate elements of the given iterable collection, until some element satisfie
 
 #### Returns
 
-`Iterable`<`T`\>
+`Generator`<`T`, `void`, `undefined`\>
 
 #### Defined in
 
-[iterable/select.ts:101](https://github.com/js-data-tools/js-helpers/blob/290463f/src/iterable/select.ts#L101)
+[iterable/select.ts:101](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/select.ts#L101)
 
 ___
 
 ### takeUntilAsync
 
-▸ **takeUntilAsync**<`T`\>(`from`, `condition`): `AsyncIterable`<`T`\>
+▸ **takeUntilAsync**<`T`\>(`from`, `condition`): `AsyncGenerator`<`T`, `void`, `undefined`\>
 
 Enumerate elements of the given iterable collection, until some element satisfies the given condition (predicate).
 
@@ -1014,17 +1014,17 @@ Enumerate elements of the given iterable collection, until some element satisfie
 
 #### Returns
 
-`AsyncIterable`<`T`\>
+`AsyncGenerator`<`T`, `void`, `undefined`\>
 
 #### Defined in
 
-[iterable/select.ts:253](https://github.com/js-data-tools/js-helpers/blob/290463f/src/iterable/select.ts#L253)
+[iterable/select.ts:253](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/select.ts#L253)
 
 ___
 
 ### takeWhile
 
-▸ **takeWhile**<`T`\>(`from`, `condition`): `Iterable`<`T`\>
+▸ **takeWhile**<`T`\>(`from`, `condition`): `Generator`<`T`, `void`, `undefined`\>
 
 Enumerate elements of the given iterable collection, while they satisfy given condition (predicate).
 
@@ -1053,19 +1053,19 @@ iterator.  It checks every element using the given predicate and stops the enume
 
 #### Returns
 
-`Iterable`<`T`\>
+`Generator`<`T`, `void`, `undefined`\>
 
 A new enuemrable objects, which will return first elements of the source collection, which all satisfy the given condition.
 
 #### Defined in
 
-[iterable/select.ts:74](https://github.com/js-data-tools/js-helpers/blob/290463f/src/iterable/select.ts#L74)
+[iterable/select.ts:74](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/select.ts#L74)
 
 ___
 
 ### takeWhileAsync
 
-▸ **takeWhileAsync**<`T`\>(`from`, `condition`): `AsyncIterable`<`T`\>
+▸ **takeWhileAsync**<`T`\>(`from`, `condition`): `AsyncGenerator`<`T`, `void`, `undefined`\>
 
 Enumerate elements of the given iterable collection, while they satisfy given condition (predicate).
 
@@ -1088,11 +1088,11 @@ Enumerate elements of the given iterable collection, while they satisfy given co
 
 #### Returns
 
-`AsyncIterable`<`T`\>
+`AsyncGenerator`<`T`, `void`, `undefined`\>
 
 #### Defined in
 
-[iterable/select.ts:226](https://github.com/js-data-tools/js-helpers/blob/290463f/src/iterable/select.ts#L226)
+[iterable/select.ts:226](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/select.ts#L226)
 
 ___
 
@@ -1127,7 +1127,7 @@ A promise for the resulting array.
 
 #### Defined in
 
-[iterable/toArray.ts:10](https://github.com/js-data-tools/js-helpers/blob/290463f/src/iterable/toArray.ts#L10)
+[iterable/toArray.ts:10](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/toArray.ts#L10)
 
 ___
 
@@ -1136,7 +1136,7 @@ Skip (up to) first N elements of the given iterable collection. Functions
 
 ### skip
 
-▸ **skip**<`T`\>(`from`, `count`): `Iterable`<`T`\>
+▸ **skip**<`T`\>(`from`, `count`): `Generator`<`T`, `void`, `undefined`\>
 
 **`Since`**
 
@@ -1157,11 +1157,11 @@ Skip (up to) first N elements of the given iterable collection. Functions
 
 #### Returns
 
-`Iterable`<`T`\>
+`Generator`<`T`, `void`, `undefined`\>
 
 #### Defined in
 
-[iterable/select.ts:113](https://github.com/js-data-tools/js-helpers/blob/290463f/src/iterable/select.ts#L113)
+[iterable/select.ts:113](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/select.ts#L113)
 
 ___
 
@@ -1198,7 +1198,7 @@ An iterable collection of parsed values.
 
 #### Defined in
 
-[json/json-lines.ts:13](https://github.com/js-data-tools/js-helpers/blob/290463f/src/json/json-lines.ts#L13)
+[json/json-lines.ts:13](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/json/json-lines.ts#L13)
 
 ___
 
@@ -1233,7 +1233,7 @@ An iterable asynchronous stream of parsed values.
 
 #### Defined in
 
-[json/json-lines.ts:27](https://github.com/js-data-tools/js-helpers/blob/290463f/src/json/json-lines.ts#L27)
+[json/json-lines.ts:27](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/json/json-lines.ts#L27)
 
 ___
 
@@ -1277,7 +1277,7 @@ A string with JSON representation of the given value (no whitespaces or line bre
 
 #### Defined in
 
-[json/json-lines.ts:54](https://github.com/js-data-tools/js-helpers/blob/290463f/src/json/json-lines.ts#L54)
+[json/json-lines.ts:54](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/json/json-lines.ts#L54)
 
 ___
 
@@ -1313,7 +1313,7 @@ true
 
 #### Defined in
 
-[predicates.ts:16](https://github.com/js-data-tools/js-helpers/blob/290463f/src/predicates.ts#L16)
+[predicates.ts:16](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/predicates.ts#L16)
 
 ___
 
@@ -1347,7 +1347,7 @@ A new [Predicate](modules.md#predicate), which returns true if all inner conditi
 
 #### Defined in
 
-[predicates.ts:152](https://github.com/js-data-tools/js-helpers/blob/290463f/src/predicates.ts#L152)
+[predicates.ts:152](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/predicates.ts#L152)
 
 ___
 
@@ -1381,7 +1381,7 @@ true if the given array is null, undefined or contains no elements.
 
 #### Defined in
 
-[predicates.ts:52](https://github.com/js-data-tools/js-helpers/blob/290463f/src/predicates.ts#L52)
+[predicates.ts:52](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/predicates.ts#L52)
 
 ___
 
@@ -1416,7 +1416,7 @@ true if the given map object is null, undefined or contains no elements.
 
 #### Defined in
 
-[predicates.ts:100](https://github.com/js-data-tools/js-helpers/blob/290463f/src/predicates.ts#L100)
+[predicates.ts:100](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/predicates.ts#L100)
 
 ___
 
@@ -1450,7 +1450,7 @@ true if the given object is null, undefined or contains no public properties.
 
 #### Defined in
 
-[predicates.ts:124](https://github.com/js-data-tools/js-helpers/blob/290463f/src/predicates.ts#L124)
+[predicates.ts:124](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/predicates.ts#L124)
 
 ___
 
@@ -1484,7 +1484,7 @@ true if given set is null, undefined or contains no elements.
 
 #### Defined in
 
-[predicates.ts:76](https://github.com/js-data-tools/js-helpers/blob/290463f/src/predicates.ts#L76)
+[predicates.ts:76](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/predicates.ts#L76)
 
 ___
 
@@ -1518,7 +1518,7 @@ true if the given array exists (not null / undefined) and contains at least one 
 
 #### Defined in
 
-[predicates.ts:64](https://github.com/js-data-tools/js-helpers/blob/290463f/src/predicates.ts#L64)
+[predicates.ts:64](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/predicates.ts#L64)
 
 ___
 
@@ -1553,7 +1553,7 @@ true if the given map is not null / undefined and contains at least one element.
 
 #### Defined in
 
-[predicates.ts:112](https://github.com/js-data-tools/js-helpers/blob/290463f/src/predicates.ts#L112)
+[predicates.ts:112](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/predicates.ts#L112)
 
 ___
 
@@ -1587,7 +1587,7 @@ true if the given object is not null / undefined and contains at least one prope
 
 #### Defined in
 
-[predicates.ts:136](https://github.com/js-data-tools/js-helpers/blob/290463f/src/predicates.ts#L136)
+[predicates.ts:136](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/predicates.ts#L136)
 
 ___
 
@@ -1621,7 +1621,7 @@ true if the given set is not null / undefined and contains at least one element.
 
 #### Defined in
 
-[predicates.ts:88](https://github.com/js-data-tools/js-helpers/blob/290463f/src/predicates.ts#L88)
+[predicates.ts:88](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/predicates.ts#L88)
 
 ___
 
@@ -1655,7 +1655,7 @@ true if the input parameter is null or undefined, otherwise false.
 
 #### Defined in
 
-[predicates.ts:28](https://github.com/js-data-tools/js-helpers/blob/290463f/src/predicates.ts#L28)
+[predicates.ts:28](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/predicates.ts#L28)
 
 ___
 
@@ -1689,7 +1689,7 @@ A new [Predicate](modules.md#predicate), which evaluates the given condition and
 
 #### Defined in
 
-[predicates.ts:190](https://github.com/js-data-tools/js-helpers/blob/290463f/src/predicates.ts#L190)
+[predicates.ts:190](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/predicates.ts#L190)
 
 ___
 
@@ -1723,7 +1723,7 @@ false if the input value is null or undefined, otherwise true.
 
 #### Defined in
 
-[predicates.ts:40](https://github.com/js-data-tools/js-helpers/blob/290463f/src/predicates.ts#L40)
+[predicates.ts:40](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/predicates.ts#L40)
 
 ___
 
@@ -1757,7 +1757,7 @@ A new [Predicate](modules.md#predicate), which evaluate given conditions on an i
 
 #### Defined in
 
-[predicates.ts:171](https://github.com/js-data-tools/js-helpers/blob/290463f/src/predicates.ts#L171)
+[predicates.ts:171](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/predicates.ts#L171)
 
 ___
 
@@ -1794,4 +1794,4 @@ A new async iterable, monitoring the progress of the iteration.
 
 #### Defined in
 
-[progress.ts:111](https://github.com/js-data-tools/js-helpers/blob/290463f/src/progress.ts#L111)
+[progress.ts:111](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/progress.ts#L111)
