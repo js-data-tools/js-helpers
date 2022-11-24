@@ -11,7 +11,7 @@
  * @param transform - The callback function that will transform entries of the source collection to the desired format.
  * @returns A new iterable stream of transformed values (asynchronous).
  */
- export async function* mapAsync<T, U>(source: AsyncIterable<T>, transform: (item: T) => U): AsyncIterable<U> {
+ export async function* mapAsync<T, U>(source: AsyncIterable<T>, transform: (item: T) => U): AsyncGenerator<U> {
     for await (const item of source) {
         yield transform(item);
     }
@@ -30,7 +30,7 @@
  * @param transform - The callback function that will transform entries of the source collection to the desired format.
  * @returns A new iterable stream of transformed values.
  */
-export function* map<T, U>(source: Iterable<T>, transform: (item: T) => U): Iterable<U> {
+export function* map<T, U>(source: Iterable<T>, transform: (item: T) => U): Generator<U> {
     for (const item of source) {
         yield transform(item);
     }

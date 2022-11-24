@@ -12,7 +12,7 @@
  * @returns A new iterable object, which, when iterated, will return elements from the inner collection, filtered with the given predicate (e.g. only 
  * those that the predicate returns true for them)
  */
-export function* filter<T>(from: Iterable<T> | undefined | null, predicate?: ((item: T) => boolean) | null): Iterable<T> {
+export function* filter<T>(from: Iterable<T> | undefined | null, predicate?: ((item: T) => boolean) | null): Generator<T, void, undefined> {
     if (!from) {
         return;
     }
@@ -42,7 +42,7 @@ export function* filter<T>(from: Iterable<T> | undefined | null, predicate?: ((i
  * @retuns A new iterable object, which, when iterated, will return the first <count> elements from the source collection (or less 
  * is the source collection is shorter than <count>).
  */
-export function* take<T>(from: Iterable<T> | undefined | null, count: number): Iterable<T> {
+export function* take<T>(from: Iterable<T> | undefined | null, count: number): Generator<T, void, undefined> {
     if (!from) {
         return;
     }
@@ -71,7 +71,7 @@ export function* take<T>(from: Iterable<T> | undefined | null, count: number): I
  * @param condition The predicate, takign a collection's element as a parameter and returning false to stop enumeration.
  * @returns A new enuemrable objects, which will return first elements of the source collection, which all satisfy the given condition.
  */
-export function* takeWhile<T>(from: Iterable<T> | undefined | null, condition: ((item: T) => boolean) | null | undefined): Iterable<T> {
+export function* takeWhile<T>(from: Iterable<T> | undefined | null, condition: ((item: T) => boolean) | null | undefined): Generator<T, void, undefined> {
     if (!from) {
         return;
     }
@@ -98,7 +98,7 @@ export function* takeWhile<T>(from: Iterable<T> | undefined | null, condition: (
  * @param from The enumerable collection to take elements of.
  * @param condition The predicate, takign a collection's element as a parameter and returning false to stop enumeration.
  */
-export function takeUntil<T>(from: Iterable<T> | undefined | null, condition: ((item: T) => boolean) | null | undefined): Iterable<T> {
+export function takeUntil<T>(from: Iterable<T> | undefined | null, condition: ((item: T) => boolean) | null | undefined): Generator<T, void, undefined> {
     return takeWhile(from, condition ? (x) => !condition(x) : condition);
 }
 
@@ -110,7 +110,7 @@ export function takeUntil<T>(from: Iterable<T> | undefined | null, condition: ((
  * @param from The enumerable collection to skip elements of.
  * @param count The number of elements to skip
  */
-export function* skip<T>(from: Iterable<T> | undefined | null, count: number): Iterable<T> {
+export function* skip<T>(from: Iterable<T> | undefined | null, count: number): Generator<T, void, undefined> {
     if (!from) {
         return;
     }
@@ -133,7 +133,7 @@ export function* skip<T>(from: Iterable<T> | undefined | null, count: number): I
  * @param from The enumerable collection to skip elements of.
  * @param condition The predicate function, getting a collection's element and returning true if element should be skipped (false to stop skipping and return the rest)
  */
-export function* skipWhile<T>(from: Iterable<T> | undefined | null, condition: ((item: T) => boolean) | null | undefined): Iterable<T> {
+export function* skipWhile<T>(from: Iterable<T> | undefined | null, condition: ((item: T) => boolean) | null | undefined): Generator<T, void, undefined> {
     if (!from) {
         return;
     }
@@ -163,7 +163,7 @@ export function* skipWhile<T>(from: Iterable<T> | undefined | null, condition: (
  * @param from The enumerable collection to skip elements of.
  * @param condition The predicate function, getting a collection's element and returning false if element should be skipped (true to stop skipping and return the rest)
  */
-export function skipUntil<T>(from: Iterable<T> | undefined | null, condition: ((item: T) => boolean) | null | undefined): Iterable<T> {
+export function skipUntil<T>(from: Iterable<T> | undefined | null, condition: ((item: T) => boolean) | null | undefined): Generator<T, void, undefined> {
     return skipWhile(from, condition ? (x) => !condition(x) : condition);
 }
 
@@ -175,7 +175,7 @@ export function skipUntil<T>(from: Iterable<T> | undefined | null, condition: ((
  * @param from The enumerable collection to filter elements of.
  * @param predicate The predicate function, receiving a single collection's element as a parameter and returning true to keep that element (or false to skip it)
  */
- export async function* filterAsync<T>(from: AsyncIterable<T> | undefined | null, predicate?: ((item: T) => boolean) | null): AsyncIterable<T> {
+ export async function* filterAsync<T>(from: AsyncIterable<T> | undefined | null, predicate?: ((item: T) => boolean) | null): AsyncGenerator<T, void, undefined> {
     if (!from) {
         return;
     }
@@ -199,7 +199,7 @@ export function skipUntil<T>(from: Iterable<T> | undefined | null, condition: ((
  * @param from The enumerable collection to take elements of.
  * @param count The number of elements to take
  */
-export async function* takeAsync<T>(from: AsyncIterable<T> | undefined | null, count: number): AsyncIterable<T> {
+export async function* takeAsync<T>(from: AsyncIterable<T> | undefined | null, count: number): AsyncGenerator<T, void, undefined> {
     if (!from) {
         return;
     }
@@ -223,7 +223,7 @@ export async function* takeAsync<T>(from: AsyncIterable<T> | undefined | null, c
  * @param from The enumerable collection to take elements of.
  * @param condition The predicate, takign a collection's element as a parameter and returning false to stop enumeration.
  */
-export async function* takeWhileAsync<T>(from: AsyncIterable<T> | undefined | null, condition: ((item: T) => boolean) | null | undefined): AsyncIterable<T> {
+export async function* takeWhileAsync<T>(from: AsyncIterable<T> | undefined | null, condition: ((item: T) => boolean) | null | undefined): AsyncGenerator<T, void, undefined> {
     if (!from) {
         return;
     }
@@ -250,7 +250,7 @@ export async function* takeWhileAsync<T>(from: AsyncIterable<T> | undefined | nu
  * @param from The enumerable collection to take elements of.
  * @param condition The predicate, takign a collection's element as a parameter and returning false to stop enumeration.
  */
-export function takeUntilAsync<T>(from: AsyncIterable<T> | undefined | null, condition: ((item: T) => boolean) | null | undefined): AsyncIterable<T> {
+export function takeUntilAsync<T>(from: AsyncIterable<T> | undefined | null, condition: ((item: T) => boolean) | null | undefined): AsyncGenerator<T, void, undefined> {
     return takeWhileAsync(from, condition ? (x) => !condition(x) : condition);
 }
 
@@ -262,7 +262,7 @@ export function takeUntilAsync<T>(from: AsyncIterable<T> | undefined | null, con
  * @param from The enumerable collection to skip elements of.
  * @param count The number of elements to skip
  */
-export async function* skipAsync<T>(from: AsyncIterable<T> | undefined | null, count: number): AsyncIterable<T> {
+export async function* skipAsync<T>(from: AsyncIterable<T> | undefined | null, count: number): AsyncGenerator<T, void, undefined> {
     if (!from) {
         return;
     }
@@ -285,7 +285,7 @@ export async function* skipAsync<T>(from: AsyncIterable<T> | undefined | null, c
  * @param from The enumerable collection to skip elements of.
  * @param condition The predicate function, getting a collection's element and returning true if element should be skipped (false to stop skipping and return the rest)
  */
-export async function* skipWhileAsync<T>(from: AsyncIterable<T> | undefined | null, condition: ((item: T) => boolean) | null | undefined): AsyncIterable<T> {
+export async function* skipWhileAsync<T>(from: AsyncIterable<T> | undefined | null, condition: ((item: T) => boolean) | null | undefined): AsyncGenerator<T, void, undefined> {
     if (!from) {
         return;
     }
@@ -315,6 +315,6 @@ export async function* skipWhileAsync<T>(from: AsyncIterable<T> | undefined | nu
  * @param from The enumerable collection to skip elements of.
  * @param condition The predicate function, getting a collection's element and returning false if element should be skipped (true to stop skipping and return the rest)
  */
-export function skipUntilAsync<T>(from: AsyncIterable<T> | undefined | null, condition: ((item: T) => boolean) | null | undefined): AsyncIterable<T> {
+export function skipUntilAsync<T>(from: AsyncIterable<T> | undefined | null, condition: ((item: T) => boolean) | null | undefined): AsyncGenerator<T, void, undefined> {
     return skipWhileAsync(from, condition ? (x) => !condition(x) : condition);
 }
