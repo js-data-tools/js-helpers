@@ -1,6 +1,6 @@
 {
   "name": "@js-data-tools/js-helpers",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A set of JavaScript / TypeScript helper functions for parsing, converting, transforming and formatting data.",
   "author": "Sergey Steinvil <sergey.steinvil@gmail.com>",
   "license": "MIT",
@@ -8,17 +8,30 @@
     "url": "https://github.com/js-data-tools/js-helpers",
     "type": "git"
   },
-  "keywords": [ "javascript", "typescript", "helpers", "library", "convert", "format", "iterators", "generators", "JSON lines", "NDJSON" ],
+  "keywords": [
+    "javascript",
+    "typescript",
+    "helpers",
+    "library",
+    "convert",
+    "format",
+    "iterators",
+    "generators",
+    "JSON lines",
+    "NDJSON"
+  ],
   "main": "dist/csj/index.js",
   "module": "dist/esm/index.js",
   "typings": "dist/types/index.d.ts",
-  "files": [ "dist" ],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "compile:node": "tsc --project tsconfig.node.json",
     "compile:esm": "tsc --project tsconfig.esm.json",
     "check-syntax": "tsc --noEmit",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "lint:fix": "eslint . --fix --ext .js,.jsx,.ts,.tsx",    
+    "lint:fix": "eslint . --fix --ext .js,.jsx,.ts,.tsx",
     "prebuild": "rimraf dist",
     "prepack": "pnpm run build",
     "build": "pnpm run compile:node & pnpm run compile:esm",
