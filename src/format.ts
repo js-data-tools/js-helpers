@@ -49,10 +49,24 @@ export function formatCompact(value: number): string {
 /**
  * Format a duration of operation, initially measured in milliseconds.
  *
+ * @description When the duration is shorter than one second, the result will be measured in milliseconds (integer).
+ * If duration is in the range between 1 second and 1 minute, it will be measured in seconds (up to two decimal digits).
+ * Durations between one and two minutes will be measured in seconds (as an integer number)
+ * And finally, the duration longer than 2 minutes will be presented as "M min [S sec]".
+ * 
  * @since 0.2.0
  * @category format
  * @param {number} durationMsec - The duration (in milliseconds) to format
  * @returns A string, representing given duration in milliseconds or seconds (whatever is shorter)
+ * 
+ * @example
+ * 
+ * formatDuration(925);       // 925 msec
+ * formatDuration(53256);     // 53.26 sec
+ * formatDuration(65256);     // 65 sec
+ * formatDuration(127874);    // 2 min 8 sec
+ * formatDuration(180014);    // 3 min
+ * 
  */
 export function formatDuration(durationMsec: number): string {
     if (durationMsec < 1000) {
