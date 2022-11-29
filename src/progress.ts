@@ -7,7 +7,7 @@ export type ProgressLogCallback = (duration: number, count: number, rate: number
  * A helper class that can be used to monitor a progress of processing a stream of items,
  * reporting it to the console (or provided callback)
  * 
- * @since 1.0.0
+ * @since 0.1.2
  * @category progress
  */
 // eslint-disable @typescript-eslint/lines-between-class-members
@@ -102,7 +102,7 @@ export class ProgressReporter {
 /**
  * Wraps given async iterable with a progress monitor, reporting how many items were processed so far (once a second).
  * 
- * @since 1.0.0
+ * @since 0.1.2
  * @category progress
  * @param source The iterable collection to monitor the progress of iteration (consumption) for.
  * @param [report] Either the callback function for reporting a progress or an instance of ProgressReporter.

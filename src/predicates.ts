@@ -7,7 +7,7 @@ export type Predicate<T> = (value: T) => boolean;
 /**
  * A predicate function, always returning true, regardless of the input value.
  * 
- * @since 1.0.0
+ * @since 0.1.2
  * @category predicates
  * @param {*} input - The input value (ignored)
  * @returns true
@@ -20,7 +20,7 @@ export function alwaysTrue<T>(input: T): boolean {
 /**
  * Check if the given value is null or undefined.
  * 
- * @since 1.0.0
+ * @since 0.1.2
  * @category predicates
  * @param input - The value to inspect.
  * @returns {boolean} true if the input parameter is null or undefined, otherwise false.
@@ -32,7 +32,7 @@ export function isNullOrUndefined<T>(input: T | null | undefined): boolean {
 /**
  * Check if the given value is not null and not undefined.  This function can also be used as a type predicate.
  * 
- * @since 1.0.0
+ * @since 0.1.2
  * @category predicates
  * @param input - The value to inspect.
  * @returns {boolean} false if the input value is null or undefined, otherwise true.
@@ -44,7 +44,7 @@ export function notNullOrUndefined<T>(input: T | null | undefined): input is T {
 /**
  * Check if the given array is null / undefined or contains no elements.
  * 
- * @since 1.0.0
+ * @since 0.1.2
  * @category predicates
  * @param {Array|null|undefined} input - The array object to inspect.
  * @returns {boolean} true if the given array is null, undefined or contains no elements.
@@ -56,7 +56,7 @@ export function isEmptyArray<T>(input: Array<T> | null | undefined): boolean {
 /**
  * Check if the given array is not null / undefined and contains at least one element. This function can also be used as a type predicate.
  * 
- * @since 1.0.0
+ * @since 0.1.2
  * @category predicates
  * @param {Array|null|undefined} input - The array object to inspect.
  * @returns {boolean} true if the given array exists (not null / undefined) and contains at least one element.
@@ -68,7 +68,7 @@ export function isNonEmptyArray<T>(input: Array<T> | null | undefined): input is
 /**
  * Check if the given set is null / undefined or contains no elements.
  * 
- * @since 1.0.0
+ * @since 0.1.2
  * @category predicates
  * @param {Set|null|undefined} input - The set object to inspect.
  * @returns {boolean} true if given set is null, undefined or contains no elements.
@@ -80,7 +80,7 @@ export function isEmptySet<T>(input: Set<T> | null | undefined): boolean {
 /**
  * Check if the given set is not null / undefined and contains at least one element. This function can also be used as a type predicate.
  * 
- * @since 1.0.0
+ * @since 0.1.2
  * @category predicates
  * @param {Set|null|undefined} input - The set object to inspect.
  * @returns {boolean} true if the given set is not null / undefined and contains at least one element.
@@ -92,7 +92,7 @@ export function isNonEmptySet<T>(input: Set<T> | null | undefined): input is Set
 /**
  * Check if the given map is null / undefined or contains no elements.
  * 
- * @since 1.0.0
+ * @since 0.1.2
  * @category predicates
  * @param {Map|null|undefined} input - The map object to inspect.
  * @returns {boolean} true if the given map object is null, undefined or contains no elements.
@@ -104,7 +104,7 @@ export function isEmptyMap<K, V>(input: Map<K, V> | null | undefined): boolean {
 /**
  * Check if the given map is not null / undefined and contains at least one element. This function can also be used as a type predicate.
  * 
- * @since 1.0.0
+ * @since 0.1.2
  * @category predicates
  * @param {Map|null|undefined} input - The map object to inspect.
  * @returns {boolean} true if the given map is not null / undefined and contains at least one element.
@@ -116,7 +116,7 @@ export function isNonEmptyMap<K, V>(input: Map<K, V> | null | undefined): input 
 /**
  * Check if the given object is null / undefined or contains no public properties.
  * 
- * @since 1.0.0
+ * @since 0.1.2
  * @category predicates
  * @param input - The object to inspect.
  * @returns {boolean} true if the given object is null, undefined or contains no public properties.
@@ -128,7 +128,7 @@ export function isEmptyObject<T extends object>(input: T | null | undefined): bo
 /**
  * Check if the given object is not null / undefined and contains at least one public property. This function can also be used as a type predicate.
  * 
- * @since 1.0.0
+ * @since 0.1.2
  * @category predicates
  * @param input - The object to inspect.
  * @returns {boolean} true if the given object is not null / undefined and contains at least one property.
@@ -144,7 +144,7 @@ export function isNonEmptyObject<T extends object>(input: T | null | undefined):
 /**
  * Creates a new predicate function, checking if an input value satisfies all given conditions (a logical AND between other predicates).
  * 
- * @since 1.0.0
+ * @since 0.1.2
  * @category predicates
  * @param predicates - The list of condition functions to combine with a logical AND.
  * @returns A new {@link Predicate}, which returns true if all inner conditions are met for the given input value.
@@ -163,7 +163,7 @@ export function and<T>(...predicates: Array<Predicate<T> | null | undefined>): P
 /**
  * Creates a new predicate function, checking if an input value satisfies any of the given conditions (a logical OR between other predicates).
  * 
- * @since 1.0.0
+ * @since 0.1.2
  * @category predicates
  * @param predicates - A list of functions, checking the "inner" conditions.  The "outer" predicate will return true if at least one of inner conditions is met.
  * @returns A new {@link Predicate}, which evaluate given conditions on an input value and return true if at least one of inner conditions is met.
@@ -182,7 +182,7 @@ export function and<T>(...predicates: Array<Predicate<T> | null | undefined>): P
 /**
  * Creates a new predicate function, which will negate the given one.
  * 
- * @since 1.0.0
+ * @since 0.1.2
  * @category predicates
  * @param predicate - The "inner" predicate to negate.
  * @returns A new {@link Predicate}, which evaluates the given condition and returns the negated value (e.g. false if the inner condition is true and vice versa).

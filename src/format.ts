@@ -7,7 +7,7 @@ export const NUMERIC_UNITS =  ['', 'K', 'M', 'G', 'T', 'P'];         // Power of
 /**
  * Formats a given size (in bytes) as a compact string with units suffix (12345678790 => 1.23 GB).
  * 
- * @since 1.0.0
+ * @since 0.1.2
  * @category format
  * @param {number} sizeInBytes - The size (in bytes) to format.
  * @param {number} [base=1000] - The base to use when compacting size.  Can be either 1000 (SI) or 1024 (IEC).
@@ -30,7 +30,7 @@ export function formatSize(sizeInBytes: number, base: 1000 | 1024 = 1000, unitNa
 /**
  * Formats a numeric value, using a compact form (aka "1.2M"), which usually takes not more than 6 symbols.
  * 
- * @since 1.0.0
+ * @since 0.1.2
  * @category format
  * @param {number} value - The numerical value to format in a compact form.
  * @returns {string} A compact form of the given number (usually up to 5 characters).

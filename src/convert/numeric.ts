@@ -3,7 +3,7 @@ const FACTORS = [1, 10, 100, 1000];
 /**
  * Rounds the given number to have at most <n> decimal digits.
  * 
- * @since 1.0.0
+ * @since 0.1.2
  * @category convert
  * @param {number} value - The numeric value to round
  * @param {number} [maxDecimalDigits=2] - The maximal number of decimal digits to keep.  Negative or undefined value means "do not round".
@@ -37,7 +37,7 @@ export function roundNumber(value: number, maxDecimalDigits = 2) {
  * Converts number to a [compact, power] tuple.  In other words, value = compact * base ^ power.
  * This format allows formatting given number as a compact string (1234567890 => [1.23, 3] => 1.23G)
  * 
- * @since 1.0.0
+ * @since 0.1.2
  * @category convert
  * @param {number} value The numeric value to convert.
  * @param {number} [maxPower=4] The maximal allowed power of the base (used to make sure we have a unit name for the power)

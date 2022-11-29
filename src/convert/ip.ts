@@ -7,7 +7,7 @@ export type Ipv4 = string | number;
 
 /**
  * Converts an IP value to string format.
- * @since 1.0.0
+ * @since 0.1.2
  * @category convert
  * @param {string|number} ip 
  * @returns {string} A string represetnation of the specified IP address.
@@ -44,7 +44,7 @@ export function ipv4AsString(ip: number | string): string {
 
 /**
  * Converts an IP value to numeric format.
- * @since 1.0.0
+ * @since 0.1.2
  * @category convert
  * @param {string|number} ip 
  * @returns {number} A numeric represetnation of the specified IP address.
@@ -73,7 +73,7 @@ export function ipv4AsNumber(ip: number | string): number {
 
 /**
  * Checks if two IPv4 values are equal.
- * @since 1.0.0
+ * @since 0.1.2
  * @param {string|number|null|undefined} a The first IPv4 value to compare. Can also be null or undefined.
  * @param {string|number|null|undefined} b The second IPv4 value to compare. Can also be null or undefined.
  * @returns {boolean} true if a and b are equal, otherwise false.  This function assumes that null === undefined === ""

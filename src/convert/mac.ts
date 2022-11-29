@@ -7,7 +7,7 @@ const macDelimiterPattern = /[-:]/g;
 /**
  * Converts a MAC address to string, formatting it using the specified delimiter (dash / color / none).
  * 
- * @since 1.0.0
+ * @since 0.1.2
  * @category convert
  * @param {bigint|string} mac - The MAC address to format.
  * @param {string} [format="-"] - The delimiter to put between MAC address components.
@@ -89,7 +89,7 @@ export function macAddressAsString(mac: bigint | string, format?: "-" | ":" | ""
 /**
  * Converts a MAC address to a number.
  * 
- * @since 1.0.0
+ * @since 0.1.2
  * @category convert
  * @param {number | string | bigint} mac - The MAC address to convert.
  * @returns {bigint|number} The numeric representation of the given MAC address.  This function returns the input as-is if it is already a number.

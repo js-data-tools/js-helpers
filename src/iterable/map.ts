@@ -5,7 +5,7 @@
  * When caller asks for the next entry, the wrapper iterator delegates the call to the internal (source) iterator,
  * then applies the given transformation function on that entry and returns the transformation result to caller.
  * 
- * @since 1.0.0
+ * @since 0.1.2
  * @category iterable
  * @param {Iterable<T>} source - The source asynchronous iterable stream of values (generator or some other source).
  * @param transform - The callback function that will transform entries of the source collection to the desired format.
@@ -24,7 +24,7 @@
  * When caller asks for the next entry, the wrapper iterator delegates the call to the internal (source) iterator,
  * then applies the given transformation function on that entry and returns the transformation result to caller.
  * 
- * @since 1.0.0
+ * @since 0.1.2
  * @category iterable
  * @param {Iterable<T>} source - The source iterable collection
  * @param transform - The callback function that will transform entries of the source collection to the desired format.
