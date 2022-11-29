@@ -1,5 +1,8 @@
 # @js-data-tools/js-helpers
 
+[![codecov][codecov-image]][codecov-url]
+[![npm][npm-image]][npm-url]
+
 A small set of JavaScript / TypeScript helper functions for parsing, converting, transforming and formatting data.
 
 This library was written in TypeScript and complied in two flavors: CommonJS (for NodeJS applications) and ESM
@@ -43,3 +46,8 @@ const FileSize = ({ size: number }) => {
 ## Documentation
 
 A reference guide, generated from sources: [Reference Root](docs/ref/modules.md)
+
+[codecov-url]: https://codecov.io/gh/js-data-tools/js-helpers
+[codecov-image]: https://codecov.io/gh/js-data-tools/js-helpers/branch/master/graph/badge.svg?token=MZRT5GHT55
+[npm-url]: https://www.npmjs.com/package/@js-data-tools/js-helpers
+[npm-image]: https://img.shields.io/npm/v/@js-data-tools/js-helpers
