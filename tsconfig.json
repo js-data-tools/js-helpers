@@ -12,6 +12,6 @@
     "typeRoots": ["node_modules/@types"],
     "sourceMap": true
   },
-  "include": ["src"],
+  "include": ["src", "vitest.config.ts"],
   "exclude": ["src/**/*.spec.ts", "src/**/*.test.ts"]
 }

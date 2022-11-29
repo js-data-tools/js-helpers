@@ -1,4 +1,4 @@
-import { compactNumber } from "./convert/numeric";
+import { compactNumber, roundNumber } from "./convert/numeric";
 
 export const SI_SIZE_UNITS = ["B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"]; // Power of 1000
 export const IEC_SIZE_UNITS = ["B", "KiB", "MiB", "GiB", "TiB", "PiB", "EiB", "ZiB", "YiB"]; // Power of 1024
@@ -44,4 +44,27 @@ export function formatSize(sizeInBytes: number, base: 1000 | 1024 = 1000, unitNa
 export function formatCompact(value: number): string {
     const [compact, i] = compactNumber(value, NUMERIC_UNITS.length);
     return compact + NUMERIC_UNITS[i];
+}
+
+/**
+ * Format a duration of operation, initially measured in milliseconds.
+ *
+ * @since 0.2.0
+ * @category format
+ * @param {number} durationMsec - The duration (in milliseconds) to format
+ * @returns A string, representing given duration in milliseconds or seconds (whatever is shorter)
+ */
+export function formatDuration(durationMsec: number): string {
+    if (durationMsec < 1000) {
+        return durationMsec + " msec";
+    }
+
+    const durationSec = roundNumber(durationMsec / 1000, durationMsec >= 60000 ? 0 : 2);
+    if (durationSec < 120) {
+        return durationSec + " sec";
+    }
+
+    const minutes = Math.floor(durationSec / 60);
+    const seconds = durationSec % 60;
+    return minutes + " min" + (seconds ? " " + seconds + " sec" : "");
 }

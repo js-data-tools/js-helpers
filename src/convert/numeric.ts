@@ -30,7 +30,7 @@ export function roundNumber(value: number, maxDecimalDigits = 2) {
     }
 
     const factor = maxDecimalDigits < FACTORS.length ? FACTORS[maxDecimalDigits] : Math.pow(10, maxDecimalDigits);
-    return intPart + Math.fround(fraction * factor) / factor;
+    return intPart + Math.round(fraction * factor) / factor;
 }
 
 /**
