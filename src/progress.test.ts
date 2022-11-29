@@ -9,7 +9,7 @@ describe("test report progress", () => {
             const log = vi.fn();
 
             const reporter = new ProgressReporter(log);
-            
+
             reporter.start();
 
             reporter.entry();
@@ -25,7 +25,7 @@ describe("test report progress", () => {
             const log = vi.fn();
 
             const reporter = new ProgressReporter(log);
-            
+
             reporter.start();
             reporter.stopAndReport();
             expect(log).toHaveBeenCalledWith(0, 0, 0, true); // Supposed to be called only once - at the end
@@ -42,7 +42,7 @@ describe("test report progress", () => {
             await Promise.resolve();
             yield 3;
         }
-    
+
         it("trackProgressAsync() should work with custom log function", async () => {
             const log = vi.fn();
 
@@ -54,7 +54,7 @@ describe("test report progress", () => {
             }
 
             // First, ensure that wrapped iterable still returns the expected values
-            expect(result).toStrictEqual([1,2,3]);
+            expect(result).toStrictEqual([1, 2, 3]);
 
             expect(log).toBeCalledTimes(2);
             // First log message should be after two entries (1 second)
@@ -75,7 +75,7 @@ describe("test report progress", () => {
             }
 
             // First, ensure that wrapped iterable still returns the expected values
-            expect(result).toStrictEqual([1,2,3]);
+            expect(result).toStrictEqual([1, 2, 3]);
 
             expect(log).toBeCalledTimes(4);
             expect(log).toHaveBeenNthCalledWith(1, 500, 1, 2, false);

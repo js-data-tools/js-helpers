@@ -6,26 +6,26 @@ const macDelimiterPattern = /[-:]/g;
 
 /**
  * Converts a MAC address to string, formatting it using the specified delimiter (dash / color / none).
- * 
+ *
  * @since 0.1.2
  * @category convert
  * @param {bigint|string} mac - The MAC address to format.
  * @param {string} [format="-"] - The delimiter to put between MAC address components.
  * @returns {string} The MAC address, formatted using specified  delimiter.
  * @example
- * 
+ *
  * macAddressAsString(BigInt(45459793942), ":");
  * // => "00:0a:95:9d:68:16"
- * 
+ *
  * macAddressAsString(BigInt(45459793942), "-");
  * // => "00-0a-95-9d-68-16"
- * 
+ *
  * macAddressAsString(BigInt(45459793942), "");
  * // => "000a959d6816"
- * 
+ *
  * macAddressAsString("00:0a:95:9d:68:16", "-");
  * // => "00-0a-95-9d-68-16"
- * 
+ *
  * macAddressAsString("000a959d6816", ":");
  * // => "00:0a:95:9d:68:16"
  */
@@ -88,25 +88,25 @@ export function macAddressAsString(mac: bigint | string, format?: "-" | ":" | ""
 
 /**
  * Converts a MAC address to a number.
- * 
+ *
  * @since 0.1.2
  * @category convert
  * @param {number | string | bigint} mac - The MAC address to convert.
  * @returns {bigint|number} The numeric representation of the given MAC address.  This function returns the input as-is if it is already a number.
  * @example
- * 
+ *
  * macAddressAsNumber("00:0a:95:9d:68:16");
  * // => bigint(45459793942)
- * 
+ *
  * macAddressAsNumber("00-0a-95-9d-68-16");
  * // => bigint(45459793942)
- * 
+ *
  * macAddressAsNumber("000a959d6816");
  * // => bigint(45459793942)
- * 
+ *
  * macAddressAsNumber(45459793942);
  * // => 45459793942
- * 
+ *
  */
 export function macAddressAsNumber(mac: number | string | bigint): bigint | number {
     if (typeof mac === "number") {

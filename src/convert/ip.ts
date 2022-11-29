@@ -9,17 +9,17 @@ export type Ipv4 = string | number;
  * Converts an IP value to string format.
  * @since 0.1.2
  * @category convert
- * @param {string|number} ip 
- * @returns {string} A string represetnation of the specified IP address.
- * 
+ * @param {string|number} ip
+ * @returns {string} A string representation of the specified IP address.
+ *
  * @example
- * 
+ *
  * ipv4AsString(3566161419)
  * // => "212.143.78.11"
- * 
+ *
  * ipv4AsString(-1407844352)
  * // => "172.22.0.0"
- * 
+ *
  * ipv4AsString("212.143.78.11")
  * // => "212.143.78.11"
  *
@@ -46,17 +46,17 @@ export function ipv4AsString(ip: number | string): string {
  * Converts an IP value to numeric format.
  * @since 0.1.2
  * @category convert
- * @param {string|number} ip 
- * @returns {number} A numeric represetnation of the specified IP address.
- * 
+ * @param {string|number} ip
+ * @returns {number} A numeric representation of the specified IP address.
+ *
  * @example
- * 
+ *
  * ipv4AsNumber("212.143.78.11")
  * // => 3566161419
- * 
+ *
  * ipv4AsNumber(-1407844352)
  * // => -1407844352
- * 
+ *
  */
 export function ipv4AsNumber(ip: number | string): number {
     if (typeof ip === "number") {
@@ -78,19 +78,19 @@ export function ipv4AsNumber(ip: number | string): number {
  * @param {string|number|null|undefined} b The second IPv4 value to compare. Can also be null or undefined.
  * @returns {boolean} true if a and b are equal, otherwise false.  This function assumes that null === undefined === ""
  * @example
- * 
+ *
  * areIpsEqual(3566161419, "212.143.78.11")
  * // => true
- * 
+ *
  * areIpsEqual("212.143.78.11", -1407844352)
  * // => false
- * 
+ *
  * areIpsEqual("212.143.78.11", "172.22.0.0")
  * // => false
- * 
+ *
  * areIpsEqual("212.143.78.11", undefined)
  * // => false
- * 
+ *
  */
 export function areIpsEqual(a: Ipv4 | null | undefined, b: Ipv4 | null | undefined): boolean {
     if (!a) {

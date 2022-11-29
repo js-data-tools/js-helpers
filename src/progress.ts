@@ -6,7 +6,7 @@ export type ProgressLogCallback = (duration: number, count: number, rate: number
 /**
  * A helper class that can be used to monitor a progress of processing a stream of items,
  * reporting it to the console (or provided callback)
- * 
+ *
  * @since 0.1.2
  * @category progress
  */
@@ -45,7 +45,7 @@ export class ProgressReporter {
     /**
      * Inform the progress monitor about another entry that was processed.  It will probably trigger a log message if enough time was passed since the last message.
      */
-     entry(): void {
+    entry(): void {
         ++this.count;
         if (this.reportEvery > 0 && Date.now() - this.lastReportTime >= this.reportEvery) {
             this.duration = Date.now() - this.startTime;
@@ -56,7 +56,7 @@ export class ProgressReporter {
     /**
      * Stops monitoring the progress of stream processing.  This method should be called when processing is completed.
      */
-     stop(): void {
+    stop(): void {
         if (this.startTime !== null) {
             this.duration = Date.now() - this.startTime;
         }
@@ -90,7 +90,7 @@ export class ProgressReporter {
         process.stdout.write(ProgressReporter.formatMessage(duration, count, rate) + (completed ? "\n" : "\r"));
     }
 
-    static defaultLog: (duration: number, count: number, rate: number, completed: boolean) => void = 
+    static defaultLog: (duration: number, count: number, rate: number, completed: boolean) => void =
         process && process.stdout ? ProgressReporter.logToStdOut : ProgressReporter.logToConsole;
 
     static formatMessage(duration: number, count: number, rate: number): string {
@@ -101,14 +101,17 @@ export class ProgressReporter {
 
 /**
  * Wraps given async iterable with a progress monitor, reporting how many items were processed so far (once a second).
- * 
+ *
  * @since 0.1.2
  * @category progress
  * @param source The iterable collection to monitor the progress of iteration (consumption) for.
  * @param [report] Either the callback function for reporting a progress or an instance of ProgressReporter.
  * @returns A new async iterable, monitoring the progress of the iteration.
  */
-export async function* trackProgressAsync<T>(source: AsyncIterable<T>, report?: ProgressReporter | ProgressLogCallback): AsyncIterable<T> {
+export async function* trackProgressAsync<T>(
+    source: AsyncIterable<T>,
+    report?: ProgressReporter | ProgressLogCallback
+): AsyncIterable<T> {
     let reporter: ProgressReporter;
     if (report) {
         if (typeof report === "function") {

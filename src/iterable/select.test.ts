@@ -106,7 +106,7 @@ describe("test skipUntil()", () => {
 });
 
 describe("test take()", () => {
-    it("take([0, -7, 2, -1, 5, 1, -5], 2) retur4ns first two elements", () => {
+    it("take([0, -7, 2, -1, 5, 1, -5], 2) returns first two elements", () => {
         const actual = [...take([0, -7, 2, -1, 5, 1, -5], 2)];
         expect(actual).toEqual([0, -7]);
     });
@@ -283,7 +283,7 @@ describe("test skipUntilAsync()", () => {
 });
 
 describe("test takeAsync()", () => {
-    it("takeAsync([0, -7, 2, -1, 5, 1, -5], 2) retur4ns first two elements", async () => {
+    it("takeAsync([0, -7, 2, -1, 5, 1, -5], 2) returns first two elements", async () => {
         const actual = takeAsync(asyncNumbers(), 2);
         expect(await toArrayAsync(actual)).toEqual([0, -7]);
     });

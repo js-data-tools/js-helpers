@@ -45,30 +45,11 @@
     "@typescript-eslint/parser": "5.43.0",
     "@vitest/coverage-c8": "0.25.3",
     "eslint": "8.28.0",
+    "prettier": "2.8.0",
     "rimraf": "3.0.2",
     "typedoc": "0.23.21",
     "typedoc-plugin-markdown": "3.13.6",
     "typescript": "4.9.3",
     "vitest": "0.25.3"
-  },
-  "eslintConfig": {
-    "env": {
-      "browser": true,
-      "node": true
-    },
-    "extends": [
-      "eslint:recommended",
-      "plugin:@typescript-eslint/recommended"
-    ],
-    "ignorePatterns": [
-      "coverage",
-      "dist"
-    ],
-    "parserOptions": {
-      "ecmaVersion": 2020,
-      "project": [
-        "./tsconfig.lint.json"
-      ]
-    }
   }
 }
