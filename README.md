@@ -2,7 +2,7 @@
 
 A small set of JavaScript / TypeScript helper functions for parsing, converting, transforming and formatting data.
 
-This library was written in TypeScript and compliled in two flavors: CommonJS (for NodeJS applications) and ESM
+This library was written in TypeScript and complied in two flavors: CommonJS (for NodeJS applications) and ESM
 for front-end applications. The code was not bundled or minified and that was done intentionally, to simplify
 tree shaking in consumer projects.
 
