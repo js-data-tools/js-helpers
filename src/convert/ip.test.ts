@@ -1,3 +1,4 @@
+import { describe, it, expect } from "vitest";
 import { areIpsEqual, ipv4AsNumber, ipv4AsString } from "./ip";
 
 describe("test ipAsString()", () => {
@@ -26,27 +27,27 @@ describe("test ipv4AsNumber()", () => {
 
 describe("test areIpsEqual()", () => {
     it("areIpsEqual('10.0.0.1', '10.0.0.1') returns true", () => {
-        const actual = areIpsEqual('10.0.0.1', '10.0.0.1');
+        const actual = areIpsEqual("10.0.0.1", "10.0.0.1");
         expect(actual).toBeTruthy();
     });
 
     it("areIpsEqual('10.0.0.1', '10.0.0.2') returns false", () => {
-        const actual = areIpsEqual('10.0.0.1', '10.0.0.2');
+        const actual = areIpsEqual("10.0.0.1", "10.0.0.2");
         expect(actual).toBeFalsy();
     });
 
     it("areIpsEqual('10.0.0.1', undefined) returns false", () => {
-        const actual = areIpsEqual('10.0.0.1', undefined);
+        const actual = areIpsEqual("10.0.0.1", undefined);
         expect(actual).toBeFalsy();
     });
 
     it("areIpsEqual(null, '10.0.0.1') returns false", () => {
-        const actual = areIpsEqual(null, '10.0.0.1');
+        const actual = areIpsEqual(null, "10.0.0.1");
         expect(actual).toBeFalsy();
     });
 
     it("areIpsEqual('212.143.78.11, 3566161419) returns true", () => {
-        const actual = areIpsEqual('212.143.78.11', 3566161419);
+        const actual = areIpsEqual("212.143.78.11", 3566161419);
         expect(actual).toBeTruthy();
     });
 

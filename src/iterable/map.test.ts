@@ -1,3 +1,4 @@
+import { describe, it, expect } from "vitest";
 import { map, mapAsync } from "./map";
 
 const packages = [
@@ -98,7 +99,7 @@ describe("test map()", () => {
 
 describe("test mapAsync()", () => {
     it("mapAsync() selects field", async () => {
-        const actual = [];
+        const actual: string[] = [];
         for await (const name of mapAsync(loadPackageVersions(), (p) => p.name)) {
             actual.push(name);
         }

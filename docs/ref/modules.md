@@ -36,6 +36,7 @@
 ### format Functions
 
 - [formatCompact](modules.md#formatcompact)
+- [formatDuration](modules.md#formatduration)
 - [formatSize](modules.md#formatsize)
 
 ### iterable Functions
@@ -99,7 +100,7 @@ An IPv4 address, represented either as string ("212.143.78.11") or as a 4-bytes 
 
 #### Defined in
 
-[convert/ip.ts:6](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/convert/ip.ts#L6)
+[convert/ip.ts:6](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/convert/ip.ts#L6)
 
 ___
 
@@ -129,7 +130,7 @@ ___
 
 #### Defined in
 
-[predicates.ts:1](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/predicates.ts#L1)
+[predicates.ts:1](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/predicates.ts#L1)
 
 ___
 
@@ -156,7 +157,7 @@ ___
 
 #### Defined in
 
-[progress.ts:4](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/progress.ts#L4)
+[progress.ts:4](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/progress.ts#L4)
 
 ## Variables
 
@@ -166,7 +167,7 @@ ___
 
 #### Defined in
 
-[format.ts:4](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/format.ts#L4)
+[format.ts:4](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/format.ts#L4)
 
 ___
 
@@ -176,7 +177,7 @@ ___
 
 #### Defined in
 
-[format.ts:5](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/format.ts#L5)
+[format.ts:5](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/format.ts#L5)
 
 ___
 
@@ -186,7 +187,7 @@ ___
 
 #### Defined in
 
-[format.ts:3](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/format.ts#L3)
+[format.ts:3](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/format.ts#L3)
 
 ## Other Functions
 
@@ -198,7 +199,7 @@ Checks if two IPv4 values are equal.
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 **`Example`**
 
@@ -231,7 +232,7 @@ true if a and b are equal, otherwise false.  This function assumes that null ===
 
 #### Defined in
 
-[convert/ip.ts:95](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/convert/ip.ts#L95)
+[convert/ip.ts:95](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/convert/ip.ts#L95)
 
 ___
 
@@ -246,7 +247,7 @@ This format allows formatting given number as a compact string (1234567890 => [1
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Parameters
 
@@ -260,11 +261,11 @@ This format allows formatting given number as a compact string (1234567890 => [1
 
 [compact: number, power: number]
 
-The array, continung two numbers: the compact and power.
+The array, containing two numbers: the compact and power.
 
 #### Defined in
 
-[convert/numeric.ts:47](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/convert/numeric.ts#L47)
+[convert/numeric.ts:47](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/convert/numeric.ts#L47)
 
 ___
 
@@ -276,7 +277,7 @@ Converts an IP value to numeric format.
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 **`Example`**
 
@@ -298,11 +299,11 @@ ipv4AsNumber(-1407844352)
 
 `number`
 
-A numeric represetnation of the specified IP address.
+A numeric representation of the specified IP address.
 
 #### Defined in
 
-[convert/ip.ts:61](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/convert/ip.ts#L61)
+[convert/ip.ts:61](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/convert/ip.ts#L61)
 
 ___
 
@@ -314,7 +315,7 @@ Converts an IP value to string format.
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 **`Example`**
 
@@ -342,11 +343,11 @@ ipv4AsString("not-ipv4")
 
 `string`
 
-A string represetnation of the specified IP address.
+A string representation of the specified IP address.
 
 #### Defined in
 
-[convert/ip.ts:29](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/convert/ip.ts#L29)
+[convert/ip.ts:29](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/convert/ip.ts#L29)
 
 ___
 
@@ -358,7 +359,7 @@ Converts a MAC address to a number.
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 **`Example`**
 
@@ -390,7 +391,7 @@ The numeric representation of the given MAC address.  This function returns the 
 
 #### Defined in
 
-[convert/mac.ts:111](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/convert/mac.ts#L111)
+[convert/mac.ts:111](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/convert/mac.ts#L111)
 
 ___
 
@@ -402,7 +403,7 @@ Converts a MAC address to string, formatting it using the specified delimiter (d
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 **`Example`**
 
@@ -438,7 +439,7 @@ The MAC address, formatted using specified  delimiter.
 
 #### Defined in
 
-[convert/mac.ts:32](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/convert/mac.ts#L32)
+[convert/mac.ts:32](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/convert/mac.ts#L32)
 
 ___
 
@@ -450,7 +451,7 @@ Rounds the given number to have at most <n> decimal digits.
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 **`Example`**
 
@@ -475,7 +476,7 @@ The given number, rounded to the requested number of decimal digits.
 
 #### Defined in
 
-[convert/numeric.ts:18](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/convert/numeric.ts#L18)
+[convert/numeric.ts:18](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/convert/numeric.ts#L18)
 
 ___
 
@@ -489,7 +490,7 @@ Formats a numeric value, using a compact form (aka "1.2M"), which usually takes 
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 **`Example`**
 
@@ -512,7 +513,52 @@ A compact form of the given number (usually up to 5 characters).
 
 #### Defined in
 
-[format.ts:44](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/format.ts#L44)
+[format.ts:44](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/format.ts#L44)
+
+___
+
+### formatDuration
+
+▸ **formatDuration**(`durationMsec`): `string`
+
+Format a duration of operation, initially measured in milliseconds.
+
+**`Description`**
+
+When the duration is shorter than one second, the result will be measured in milliseconds (integer).
+If duration is in the range between 1 second and 1 minute, it will be measured in seconds (up to two decimal digits).
+Durations between one and two minutes will be measured in seconds (as an integer number)
+And finally, the duration longer than 2 minutes will be presented as "M min [S sec]".
+
+**`Since`**
+
+0.2.0
+
+**`Example`**
+
+```ts
+formatDuration(925);       // 925 msec
+formatDuration(53256);     // 53.26 sec
+formatDuration(65256);     // 65 sec
+formatDuration(127874);    // 2 min 8 sec
+formatDuration(180014);    // 3 min
+```
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `durationMsec` | `number` | The duration (in milliseconds) to format |
+
+#### Returns
+
+`string`
+
+A string, representing given duration in milliseconds or seconds (whatever is shorter)
+
+#### Defined in
+
+[format.ts:71](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/format.ts#L71)
 
 ___
 
@@ -524,7 +570,7 @@ Formats a given size (in bytes) as a compact string with units suffix (123456787
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 **`Example`**
 
@@ -539,7 +585,7 @@ console.log(formatSize(1023456789, 1024)); // => 976 MiB
 | :------ | :------ | :------ | :------ |
 | `sizeInBytes` | `number` | `undefined` | The size (in bytes) to format. |
 | `base?` | ``1000`` \| ``1024`` | `1000` | The base to use when compacting size.  Can be either 1000 (SI) or 1024 (IEC). |
-| `unitNames?` | `string`[] | `undefined` | An optional list of unit names to use. If this parameter is omitted, this function will   automatically use the [SI_SIZE_UNITS](modules.md#si_size_units) (if the base is 1000) or the [IEC_SIZE_UNITS](modules.md#iec_size_units)  (if the base is 1024). |
+| `unitNames?` | `string`[] | `undefined` | An optional list of unit names to use. If this parameter is omitted, this function will  automatically use the [SI_SIZE_UNITS](modules.md#si_size_units) (if the base is 1000) or the [IEC_SIZE_UNITS](modules.md#iec_size_units)  (if the base is 1024). |
 
 #### Returns
 
@@ -549,7 +595,7 @@ A string with a compact version of size (1.27GB)
 
 #### Defined in
 
-[format.ts:24](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/format.ts#L24)
+[format.ts:24](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/format.ts#L24)
 
 ___
 
@@ -569,7 +615,7 @@ iterator, skipping values that do not pass the given filter.
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -588,12 +634,12 @@ iterator, skipping values that do not pass the given filter.
 
 `Generator`<`T`, `void`, `undefined`\>
 
-A new iterable object, which, when iterated, will return elements from the inner collection, filtered with the given predicate (e.g. only 
+A new iterable object, which, when iterated, will return elements from the inner collection, filtered with the given predicate (e.g. only
 those that the predicate returns true for them)
 
 #### Defined in
 
-[iterable/select.ts:15](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/select.ts#L15)
+[iterable/select.ts:15](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/iterable/select.ts#L15)
 
 ___
 
@@ -605,7 +651,7 @@ Filter elements of the given iterable collection, using given predicate function
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -626,7 +672,7 @@ Filter elements of the given iterable collection, using given predicate function
 
 #### Defined in
 
-[iterable/select.ts:178](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/select.ts#L178)
+[iterable/select.ts:193](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/iterable/select.ts#L193)
 
 ___
 
@@ -644,7 +690,7 @@ then applies the given transformation function on that entry and returns the tra
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -668,7 +714,7 @@ A new iterable stream of transformed values.
 
 #### Defined in
 
-[iterable/map.ts:33](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/map.ts#L33)
+[iterable/map.ts:33](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/iterable/map.ts#L33)
 
 ___
 
@@ -686,7 +732,7 @@ then applies the given transformation function on that entry and returns the tra
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -710,7 +756,7 @@ A new iterable stream of transformed values (asynchronous).
 
 #### Defined in
 
-[iterable/map.ts:14](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/map.ts#L14)
+[iterable/map.ts:14](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/iterable/map.ts#L14)
 
 ___
 
@@ -722,7 +768,7 @@ Skip (up to) first N elements of the given iterable collection.
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -743,7 +789,7 @@ Skip (up to) first N elements of the given iterable collection.
 
 #### Defined in
 
-[iterable/select.ts:265](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/select.ts#L265)
+[iterable/select.ts:292](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/iterable/select.ts#L292)
 
 ___
 
@@ -755,7 +801,7 @@ Skip first elements of the iterable collection until one of them matches a given
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -776,7 +822,7 @@ Skip first elements of the iterable collection until one of them matches a given
 
 #### Defined in
 
-[iterable/select.ts:166](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/select.ts#L166)
+[iterable/select.ts:178](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/iterable/select.ts#L178)
 
 ___
 
@@ -788,7 +834,7 @@ Skip first elements of the iterable collection until one of them matches a given
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -809,7 +855,7 @@ Skip first elements of the iterable collection until one of them matches a given
 
 #### Defined in
 
-[iterable/select.ts:318](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/select.ts#L318)
+[iterable/select.ts:351](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/iterable/select.ts#L351)
 
 ___
 
@@ -821,7 +867,7 @@ Skip first elements of the iterable collection, while they match a given conditi
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -842,7 +888,7 @@ Skip first elements of the iterable collection, while they match a given conditi
 
 #### Defined in
 
-[iterable/select.ts:136](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/select.ts#L136)
+[iterable/select.ts:145](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/iterable/select.ts#L145)
 
 ___
 
@@ -854,7 +900,7 @@ Skip first elements of the iterable collection, while they match a given conditi
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -875,7 +921,7 @@ Skip first elements of the iterable collection, while they match a given conditi
 
 #### Defined in
 
-[iterable/select.ts:288](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/select.ts#L288)
+[iterable/select.ts:318](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/iterable/select.ts#L318)
 
 ___
 
@@ -893,12 +939,7 @@ iterator up to <N> times and then stops the enumeration as if the original itera
 
 **`Since`**
 
-1.0.0
-
-**`Retuns`**
-
-A new iterable object, which, when iterated, will return the first <count> elements from the source collection (or less 
-is the source collection is shorter than <count>).
+0.1.2
 
 #### Type parameters
 
@@ -917,9 +958,12 @@ is the source collection is shorter than <count>).
 
 `Generator`<`T`, `void`, `undefined`\>
 
+A new iterable object, which, when iterated, will return the first <count> elements from the source collection (or less
+is the source collection is shorter than <count>).
+
 #### Defined in
 
-[iterable/select.ts:45](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/select.ts#L45)
+[iterable/select.ts:48](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/iterable/select.ts#L48)
 
 ___
 
@@ -931,7 +975,7 @@ Take (up to) first N elements of the given iterable collection.
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -952,7 +996,7 @@ Take (up to) first N elements of the given iterable collection.
 
 #### Defined in
 
-[iterable/select.ts:202](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/select.ts#L202)
+[iterable/select.ts:220](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/iterable/select.ts#L220)
 
 ___
 
@@ -964,7 +1008,7 @@ Enumerate elements of the given iterable collection, until some element satisfie
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -977,7 +1021,7 @@ Enumerate elements of the given iterable collection, until some element satisfie
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `from` | `undefined` \| ``null`` \| `Iterable`<`T`\> | The enumerable collection to take elements of. |
-| `condition` | `undefined` \| ``null`` \| (`item`: `T`) => `boolean` | The predicate, takign a collection's element as a parameter and returning false to stop enumeration. |
+| `condition` | `undefined` \| ``null`` \| (`item`: `T`) => `boolean` | The predicate, taking a collection's element as a parameter and returning false to stop enumeration. |
 
 #### Returns
 
@@ -985,7 +1029,7 @@ Enumerate elements of the given iterable collection, until some element satisfie
 
 #### Defined in
 
-[iterable/select.ts:101](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/select.ts#L101)
+[iterable/select.ts:107](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/iterable/select.ts#L107)
 
 ___
 
@@ -997,7 +1041,7 @@ Enumerate elements of the given iterable collection, until some element satisfie
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -1010,7 +1054,7 @@ Enumerate elements of the given iterable collection, until some element satisfie
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `from` | `undefined` \| ``null`` \| `AsyncIterable`<`T`\> | The enumerable collection to take elements of. |
-| `condition` | `undefined` \| ``null`` \| (`item`: `T`) => `boolean` | The predicate, takign a collection's element as a parameter and returning false to stop enumeration. |
+| `condition` | `undefined` \| ``null`` \| (`item`: `T`) => `boolean` | The predicate, taking a collection's element as a parameter and returning false to stop enumeration. |
 
 #### Returns
 
@@ -1018,7 +1062,7 @@ Enumerate elements of the given iterable collection, until some element satisfie
 
 #### Defined in
 
-[iterable/select.ts:253](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/select.ts#L253)
+[iterable/select.ts:277](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/iterable/select.ts#L277)
 
 ___
 
@@ -1036,7 +1080,7 @@ iterator.  It checks every element using the given predicate and stops the enume
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -1049,17 +1093,17 @@ iterator.  It checks every element using the given predicate and stops the enume
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `from` | `undefined` \| ``null`` \| `Iterable`<`T`\> | The enumerable collection to take elements of. |
-| `condition` | `undefined` \| ``null`` \| (`item`: `T`) => `boolean` | The predicate, takign a collection's element as a parameter and returning false to stop enumeration. |
+| `condition` | `undefined` \| ``null`` \| (`item`: `T`) => `boolean` | The predicate, taking a collection's element as a parameter and returning false to stop enumeration. |
 
 #### Returns
 
 `Generator`<`T`, `void`, `undefined`\>
 
-A new enuemrable objects, which will return first elements of the source collection, which all satisfy the given condition.
+A new enumerable objects, which will return first elements of the source collection, which all satisfy the given condition.
 
 #### Defined in
 
-[iterable/select.ts:74](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/select.ts#L74)
+[iterable/select.ts:77](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/iterable/select.ts#L77)
 
 ___
 
@@ -1071,7 +1115,7 @@ Enumerate elements of the given iterable collection, while they satisfy given co
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -1084,7 +1128,7 @@ Enumerate elements of the given iterable collection, while they satisfy given co
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `from` | `undefined` \| ``null`` \| `AsyncIterable`<`T`\> | The enumerable collection to take elements of. |
-| `condition` | `undefined` \| ``null`` \| (`item`: `T`) => `boolean` | The predicate, takign a collection's element as a parameter and returning false to stop enumeration. |
+| `condition` | `undefined` \| ``null`` \| (`item`: `T`) => `boolean` | The predicate, taking a collection's element as a parameter and returning false to stop enumeration. |
 
 #### Returns
 
@@ -1092,7 +1136,7 @@ Enumerate elements of the given iterable collection, while they satisfy given co
 
 #### Defined in
 
-[iterable/select.ts:226](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/select.ts#L226)
+[iterable/select.ts:247](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/iterable/select.ts#L247)
 
 ___
 
@@ -1104,7 +1148,7 @@ Reads all values from the asynchronous stream (iterable) and stores them in the 
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -1117,7 +1161,7 @@ Reads all values from the asynchronous stream (iterable) and stores them in the 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `source` | `AsyncIterable`<`T`\> | An async stream of values to iterate. |
-| `target?` | `T`[] | Reference to the array to append values to.  A new arrray will be created if this parameter is null or omitted. |
+| `target?` | `T`[] | Reference to the array to append values to.  A new array will be created if this parameter is null or omitted. |
 
 #### Returns
 
@@ -1127,7 +1171,7 @@ A promise for the resulting array.
 
 #### Defined in
 
-[iterable/toArray.ts:10](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/toArray.ts#L10)
+[iterable/toArray.ts:10](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/iterable/toArray.ts#L10)
 
 ___
 
@@ -1140,7 +1184,7 @@ Skip (up to) first N elements of the given iterable collection. Functions
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -1161,7 +1205,7 @@ Skip (up to) first N elements of the given iterable collection. Functions
 
 #### Defined in
 
-[iterable/select.ts:113](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/iterable/select.ts#L113)
+[iterable/select.ts:122](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/iterable/select.ts#L122)
 
 ___
 
@@ -1175,7 +1219,7 @@ Parses an NDJSON stream
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -1198,7 +1242,7 @@ An iterable collection of parsed values.
 
 #### Defined in
 
-[json/json-lines.ts:13](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/json/json-lines.ts#L13)
+[json/json-lines.ts:12](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/json/json-lines.ts#L12)
 
 ___
 
@@ -1210,7 +1254,7 @@ Parses an asynchronous NDJSON stream
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -1233,7 +1277,7 @@ An iterable asynchronous stream of parsed values.
 
 #### Defined in
 
-[json/json-lines.ts:27](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/json/json-lines.ts#L27)
+[json/json-lines.ts:29](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/json/json-lines.ts#L29)
 
 ___
 
@@ -1241,11 +1285,11 @@ ___
 
 ▸ **toJsonLine**(`value`): `string`
 
-Render the given value as an NDJSON entry: a JSON without whitespaces, followed by a line break.
+Render the given value as an NDJSON entry: a JSON without whitespace, followed by a line break.
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 **`Example`**
 
@@ -1273,11 +1317,11 @@ toJsonLine([
 
 `string`
 
-A string with JSON representation of the given value (no whitespaces or line breaks in the middle), followed by a line break.
+A string with JSON representation of the given value (no whitespace or line breaks in the middle), followed by a line break.
 
 #### Defined in
 
-[json/json-lines.ts:54](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/json/json-lines.ts#L54)
+[json/json-lines.ts:60](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/json/json-lines.ts#L60)
 
 ___
 
@@ -1291,7 +1335,7 @@ A predicate function, always returning true, regardless of the input value.
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -1313,7 +1357,7 @@ true
 
 #### Defined in
 
-[predicates.ts:16](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/predicates.ts#L16)
+[predicates.ts:16](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/predicates.ts#L16)
 
 ___
 
@@ -1325,7 +1369,7 @@ Creates a new predicate function, checking if an input value satisfies all given
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -1347,7 +1391,7 @@ A new [Predicate](modules.md#predicate), which returns true if all inner conditi
 
 #### Defined in
 
-[predicates.ts:152](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/predicates.ts#L152)
+[predicates.ts:152](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/predicates.ts#L152)
 
 ___
 
@@ -1359,7 +1403,7 @@ Check if the given array is null / undefined or contains no elements.
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -1381,7 +1425,7 @@ true if the given array is null, undefined or contains no elements.
 
 #### Defined in
 
-[predicates.ts:52](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/predicates.ts#L52)
+[predicates.ts:52](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/predicates.ts#L52)
 
 ___
 
@@ -1393,7 +1437,7 @@ Check if the given map is null / undefined or contains no elements.
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -1416,7 +1460,7 @@ true if the given map object is null, undefined or contains no elements.
 
 #### Defined in
 
-[predicates.ts:100](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/predicates.ts#L100)
+[predicates.ts:100](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/predicates.ts#L100)
 
 ___
 
@@ -1428,7 +1472,7 @@ Check if the given object is null / undefined or contains no public properties.
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -1450,7 +1494,7 @@ true if the given object is null, undefined or contains no public properties.
 
 #### Defined in
 
-[predicates.ts:124](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/predicates.ts#L124)
+[predicates.ts:124](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/predicates.ts#L124)
 
 ___
 
@@ -1462,7 +1506,7 @@ Check if the given set is null / undefined or contains no elements.
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -1484,7 +1528,7 @@ true if given set is null, undefined or contains no elements.
 
 #### Defined in
 
-[predicates.ts:76](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/predicates.ts#L76)
+[predicates.ts:76](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/predicates.ts#L76)
 
 ___
 
@@ -1496,7 +1540,7 @@ Check if the given array is not null / undefined and contains at least one eleme
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -1518,7 +1562,7 @@ true if the given array exists (not null / undefined) and contains at least one 
 
 #### Defined in
 
-[predicates.ts:64](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/predicates.ts#L64)
+[predicates.ts:64](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/predicates.ts#L64)
 
 ___
 
@@ -1530,7 +1574,7 @@ Check if the given map is not null / undefined and contains at least one element
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -1553,7 +1597,7 @@ true if the given map is not null / undefined and contains at least one element.
 
 #### Defined in
 
-[predicates.ts:112](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/predicates.ts#L112)
+[predicates.ts:112](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/predicates.ts#L112)
 
 ___
 
@@ -1565,7 +1609,7 @@ Check if the given object is not null / undefined and contains at least one publ
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -1587,7 +1631,7 @@ true if the given object is not null / undefined and contains at least one prope
 
 #### Defined in
 
-[predicates.ts:136](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/predicates.ts#L136)
+[predicates.ts:136](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/predicates.ts#L136)
 
 ___
 
@@ -1599,7 +1643,7 @@ Check if the given set is not null / undefined and contains at least one element
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -1621,7 +1665,7 @@ true if the given set is not null / undefined and contains at least one element.
 
 #### Defined in
 
-[predicates.ts:88](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/predicates.ts#L88)
+[predicates.ts:88](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/predicates.ts#L88)
 
 ___
 
@@ -1633,7 +1677,7 @@ Check if the given value is null or undefined.
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -1655,7 +1699,7 @@ true if the input parameter is null or undefined, otherwise false.
 
 #### Defined in
 
-[predicates.ts:28](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/predicates.ts#L28)
+[predicates.ts:28](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/predicates.ts#L28)
 
 ___
 
@@ -1667,7 +1711,7 @@ Creates a new predicate function, which will negate the given one.
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -1689,7 +1733,7 @@ A new [Predicate](modules.md#predicate), which evaluates the given condition and
 
 #### Defined in
 
-[predicates.ts:190](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/predicates.ts#L190)
+[predicates.ts:190](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/predicates.ts#L190)
 
 ___
 
@@ -1701,7 +1745,7 @@ Check if the given value is not null and not undefined.  This function can also 
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -1723,7 +1767,7 @@ false if the input value is null or undefined, otherwise true.
 
 #### Defined in
 
-[predicates.ts:40](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/predicates.ts#L40)
+[predicates.ts:40](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/predicates.ts#L40)
 
 ___
 
@@ -1735,7 +1779,7 @@ Creates a new predicate function, checking if an input value satisfies any of th
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -1757,7 +1801,7 @@ A new [Predicate](modules.md#predicate), which evaluate given conditions on an i
 
 #### Defined in
 
-[predicates.ts:171](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/predicates.ts#L171)
+[predicates.ts:171](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/predicates.ts#L171)
 
 ___
 
@@ -1771,7 +1815,7 @@ Wraps given async iterable with a progress monitor, reporting how many items wer
 
 **`Since`**
 
-1.0.0
+0.1.2
 
 #### Type parameters
 
@@ -1794,4 +1838,4 @@ A new async iterable, monitoring the progress of the iteration.
 
 #### Defined in
 
-[progress.ts:111](https://github.com/js-data-tools/js-helpers/blob/8a83321/src/progress.ts#L111)
+[progress.ts:111](https://github.com/js-data-tools/js-helpers/blob/69b2499/src/progress.ts#L111)

@@ -1,30 +1,31 @@
+import { describe, it, expect, vi } from "vitest";
 import { ProgressReporter, trackProgressAsync } from "./progress";
 
 describe("test report progress", () => {
     describe("test ProgressReporter", () => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
 
         it("ProgressReporter.Log() should be called only once a second", () => {
-            const log = jest.fn();
+            const log = vi.fn();
 
             const reporter = new ProgressReporter(log);
-            
+
             reporter.start();
 
             reporter.entry();
             reporter.entry();
             expect(log).not.toBeCalled(); // Should not be called after the first time
-            jest.advanceTimersByTime(1000);
+            vi.advanceTimersByTime(1000);
             reporter.entry();
             reporter.entry();
             expect(log).toHaveBeenCalledWith(1000, 3, 3, false); // Supposed to be called only once - after we advanced the timer
         });
 
         it("ProgressReporter.Log() should be called at the end", () => {
-            const log = jest.fn();
+            const log = vi.fn();
 
             const reporter = new ProgressReporter(log);
-            
+
             reporter.start();
             reporter.stopAndReport();
             expect(log).toHaveBeenCalledWith(0, 0, 0, true); // Supposed to be called only once - at the end
@@ -32,7 +33,7 @@ describe("test report progress", () => {
     });
 
     describe("test trackProgressAsync", () => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
 
         async function* asyncSequence(): AsyncIterable<number> {
             yield 1;
@@ -41,19 +42,19 @@ describe("test report progress", () => {
             await Promise.resolve();
             yield 3;
         }
-    
+
         it("trackProgressAsync() should work with custom log function", async () => {
-            const log = jest.fn();
+            const log = vi.fn();
 
             const sequence = trackProgressAsync(asyncSequence(), log);
             const result: number[] = [];
             for await (const entry of sequence) {
                 result.push(entry);
-                jest.advanceTimersByTime(500);
+                vi.advanceTimersByTime(500);
             }
 
             // First, ensure that wrapped iterable still returns the expected values
-            expect(result).toStrictEqual([1,2,3]);
+            expect(result).toStrictEqual([1, 2, 3]);
 
             expect(log).toBeCalledTimes(2);
             // First log message should be after two entries (1 second)
@@ -63,18 +64,18 @@ describe("test report progress", () => {
         });
 
         it("trackProgressAsync() should work with custom monitor function", async () => {
-            const log = jest.fn();
+            const log = vi.fn();
             const monitor = new ProgressReporter(log, 200);
 
             const sequence = trackProgressAsync(asyncSequence(), monitor);
             const result: number[] = [];
             for await (const entry of sequence) {
                 result.push(entry);
-                jest.advanceTimersByTime(500);
+                vi.advanceTimersByTime(500);
             }
 
             // First, ensure that wrapped iterable still returns the expected values
-            expect(result).toStrictEqual([1,2,3]);
+            expect(result).toStrictEqual([1, 2, 3]);
 
             expect(log).toBeCalledTimes(4);
             expect(log).toHaveBeenNthCalledWith(1, 500, 1, 2, false);
