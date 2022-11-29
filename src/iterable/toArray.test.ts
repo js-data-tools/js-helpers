@@ -1,3 +1,4 @@
+import { describe, it, expect } from "vitest";
 import { toArrayAsync } from "./toArray";
 
 async function* providePackageNames() {

@@ -1,3 +1,4 @@
+import { describe, it, expect } from "vitest";
 import { toArrayAsync } from "../iterable";
 import { parseJsonLines, parseJsonLinesAsync, toJsonLine } from "./json-lines";
 

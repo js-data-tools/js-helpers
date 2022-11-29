@@ -1,3 +1,4 @@
+import { describe, it, expect } from "vitest";
 import { areIpsEqual, ipv4AsNumber, ipv4AsString } from "./ip";
 
 describe("test ipAsString()", () => {

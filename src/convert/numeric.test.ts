@@ -1,3 +1,4 @@
+import { describe, it, expect } from "vitest";
 import { roundNumber, compactNumber } from "./numeric";
 
 describe("Test numeric convert helpers", () => {

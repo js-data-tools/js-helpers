@@ -1,3 +1,4 @@
+import { describe, it, expect } from "vitest";
 import { macAddressAsNumber, macAddressAsString } from "./mac";
 
 describe("test macAddressAsNumber()", () => {

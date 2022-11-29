@@ -1,3 +1,4 @@
+import { describe, it, expect, vi } from "vitest";
 import {
     alwaysTrue,
     and,
@@ -18,7 +19,7 @@ import {
 describe("test predicates", () => {
     describe("test and<> predicates", () => {
         it("and() predicate calls second condition if the first one returns true", () => {
-            const condition = jest.fn((x) => x > 0);
+            const condition = vi.fn((x) => x > 0);
             const predicate = and((x) => typeof x === "number", condition);
 
             const actual = predicate(2);
@@ -27,7 +28,7 @@ describe("test predicates", () => {
         });
 
         it("and() predicate stops after first condition that returns false", () => {
-            const condition = jest.fn((x) => x > 0);
+            const condition = vi.fn((x) => x > 0);
             const predicate = and((x) => typeof x === "number", condition);
 
             const actual = predicate("2");
@@ -36,7 +37,7 @@ describe("test predicates", () => {
         });
 
         it("and() skips null and undefined conditions", () => {
-            const condition = jest.fn((x) => x > 0);
+            const condition = vi.fn((x) => x > 0);
             const predicate = and(null, (x) => typeof x === "number", undefined, condition);
 
             const actual = predicate(2);
@@ -45,7 +46,7 @@ describe("test predicates", () => {
         });
 
         it("and() with a single argument returns it instead of creating a new function", () => {
-            const condition = jest.fn((x) => x > 0);
+            const condition = vi.fn((x) => x > 0);
             const predicate = and(condition);
 
             expect(predicate).toBe(condition);
@@ -59,7 +60,7 @@ describe("test predicates", () => {
 
     describe("test or<> predicates", () => {
         it("or() predicate calls second condition if the first one returns false", () => {
-            const condition = jest.fn((x) => x > 10);
+            const condition = vi.fn((x) => x > 10);
             const predicate = or((x) => x < 2, condition);
 
             const actual = predicate(2);
@@ -68,7 +69,7 @@ describe("test predicates", () => {
         });
 
         it("or() predicate stops after first condition that returns true", () => {
-            const condition = jest.fn((x) => x > 10);
+            const condition = vi.fn((x) => x > 10);
             const predicate = or((x) => x < 2, condition);
 
             const actual = predicate(1);
@@ -77,7 +78,7 @@ describe("test predicates", () => {
         });
 
         it("or() skips null and undefined conditions", () => {
-            const condition = jest.fn((x) => x > 10);
+            const condition = vi.fn((x) => x > 10);
             const predicate = or(null, (x) => x < 2, undefined, condition);
 
             const actual = predicate(11);
@@ -86,7 +87,7 @@ describe("test predicates", () => {
         });
 
         it("or() with a single argument returns it instead of creating a new function", () => {
-            const condition = jest.fn((x) => x > 0);
+            const condition = vi.fn((x) => x > 0);
             const predicate = or(condition);
 
             expect(predicate).toBe(condition);
