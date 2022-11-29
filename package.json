@@ -27,6 +27,7 @@
     "dist"
   ],
   "scripts": {
+    "compile:types": "tsc --project tsconfig.json --declaration --declarationMap --emitDeclarationOnly --declarationDir dist/types --removeComments false",
     "compile:node": "tsc --project tsconfig.node.json",
     "compile:esm": "tsc --project tsconfig.esm.json",
     "check-syntax": "tsc --noEmit",
@@ -34,13 +35,14 @@
     "lint:fix": "eslint . --fix --ext .js,.jsx,.ts,.tsx",
     "prebuild": "rimraf dist",
     "prepack": "pnpm run build",
-    "build": "pnpm run compile:node & pnpm run compile:esm",
+    "build": "pnpm run compile:node & pnpm run compile:esm & pnpm compile:types",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
-    "doc:generate": "typedoc --tsconfig tsconfig.lint.json --plugin typedoc-plugin-markdown --out docs/ref src/index.ts"
+    "doc:generate": "typedoc --plugin typedoc-plugin-markdown --out docs/ref src/index.ts"
   },
   "packageManager": "pnpm@7.16.1",
   "devDependencies": {
+    "@types/node": "18.11.9",
     "@typescript-eslint/eslint-plugin": "5.45.0",
     "@typescript-eslint/parser": "5.45.0",
     "@vitest/coverage-c8": "0.25.3",

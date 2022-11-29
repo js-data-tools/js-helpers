@@ -3,15 +3,16 @@
     "moduleResolution": "node",
     "module": "CommonJS",
     "target": "es2020",
-    "lib": ["es2020"],
+    "lib": ["es2020", "dom"],
     "strict": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "downlevelIteration": true,
     "esModuleInterop": true,
     "typeRoots": ["node_modules/@types"],
-    "sourceMap": true
+    "sourceMap": true,
+    "removeComments": true
   },
-  "include": ["src", "vitest.config.ts"],
+  "include": ["src"],
   "exclude": ["src/**/*.spec.ts", "src/**/*.test.ts"]
 }
