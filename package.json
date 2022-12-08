@@ -1,6 +1,6 @@
 {
   "name": "@js-data-tools/js-helpers",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A set of JavaScript / TypeScript helper functions for parsing, converting, transforming and formatting data.",
   "author": "Sergey Steinvil <sergey.steinvil@gmail.com>",
   "license": "MIT",
