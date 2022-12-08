@@ -38,7 +38,7 @@
     "build": "pnpm run compile:node & pnpm run compile:esm & pnpm compile:types",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
-    "doc:generate": "typedoc --out docs/ref src/index.ts"
+    "doc:generate": "typedoc --gitRevision master --out docs/ref src/index.ts"
   },
   "packageManager": "pnpm@7.18.1",
   "devDependencies": {

@@ -16,7 +16,7 @@ const FACTORS = [1, 10, 100, 1000];
  *
  */
 export function roundNumber(value: number, maxDecimalDigits = 2) {
-    if (maxDecimalDigits === undefined || maxDecimalDigits < 0) {
+    if (maxDecimalDigits < 0) {
         return value;
     }
     if (!maxDecimalDigits) {
