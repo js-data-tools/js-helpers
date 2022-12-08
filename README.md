@@ -45,7 +45,7 @@ const FileSize = ({ size: number }) => {
 
 ## Documentation
 
-A reference guide, generated from sources: [Reference Root](docs/ref/modules.md)
+A reference guide, generated from sources: [Reference Root](docs/ref/modules.html)
 
 [codecov-url]: https://codecov.io/gh/js-data-tools/js-helpers
 [codecov-image]: https://codecov.io/gh/js-data-tools/js-helpers/branch/master/graph/badge.svg?token=MZRT5GHT55
