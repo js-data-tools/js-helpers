@@ -8,6 +8,10 @@
 
 - [ProgressReporter](classes/ProgressReporter.md)
 
+### Interfaces
+
+- [PropertiesOrderOptions](interfaces/PropertiesOrderOptions.md)
+
 ### Type Aliases
 
 - [Ipv4](modules.md#ipv4)
@@ -85,6 +89,11 @@
 ### progress Functions
 
 - [trackProgressAsync](modules.md#trackprogressasync)
+
+### transform Functions
+
+- [orderNames](modules.md#ordernames)
+- [reorderProperties](modules.md#reorderproperties)
 
 ## Type Aliases
 
@@ -251,7 +260,7 @@ This format allows formatting given number as a compact string (1234567890 => [1
 | :------ | :------ | :------ | :------ |
 | `value` | `number` | `undefined` | The numeric value to convert. |
 | `maxPower?` | `number` | `4` | The maximal allowed power of the base (used to make sure we have a unit name for the power) |
-| `base?` | `number` | `1000` | The base for the power. |
+| `base?` | `number` | `1000` | The base for the power (default is 1000). |
 
 #### Returns
 
@@ -1834,3 +1843,98 @@ A new async iterable, monitoring the progress of the iteration.
 #### Defined in
 
 [progress.ts:111](https://github.com/js-data-tools/js-helpers/blob/master/src/progress.ts#L111)
+
+___
+
+## transform Functions
+
+### orderNames
+
+▸ **orderNames**(`names`, `options`): `string`[]
+
+Re-orders values in a string array, according to user preferences, putting specific strings at the beginning,
+others at the end, and optionally sorting the rest of values (in the middle).
+
+**`Description`**
+
+This function is intended to help with re-ordering properties of a plain JavaScript object (actually JSON).
+Calling this function in loop should work fast enough on a decent amount of records, but it is not optimized for bulk processing.
+
+**`Since`**
+
+0.3.0
+
+**`Example`**
+
+```ts
+orderNames(
+    ["description", "name", "version", "dependencies", "author", "devDependencies"],
+    { first: ["name", "version", "description", "type"], sort: true }
+);
+// => ["name", "version", "description", "author", "dependencies", "devDependencies"]
+```
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `names` | `string`[] | = The list of names (strings) to re-order. |
+| `options` | [`PropertiesOrderOptions`](interfaces/PropertiesOrderOptions.md) | Configuration, specifying which properties should come first, which should come last and how to sort the rest of properties (if at all). |
+
+#### Returns
+
+`string`[]
+
+A new array, containing values from the names array, ordered according to options.
+
+#### Defined in
+
+transform/objects.ts:56
+
+___
+
+### reorderProperties
+
+▸ **reorderProperties**<`T`\>(`source`, `options`, `inplace?`): `Record`<`string`, `T`\>
+
+**`Since`**
+
+0.3.0
+
+**`Example`**
+
+```ts
+const normalized = reorderProperties(
+    { version: "1.0.0", name: "js-helpers", author: "Sergey", license: "MIT", main: "index.js", files: ["dist"] },
+    { first: ["name", "version"], last: ["license"], sort: true }
+);
+
+console.log(JSON.stringify(normalized));
+// => {"name":"js-helpers","version":"1.0.0","author":"Sergey","files":["dist"],"main":"index.js","license":"MIT"}
+```
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | `unknown` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | `Record`<`string`, `T`\> | The source object to re-order properties of. |
+| `options` | [`PropertiesOrderOptions`](interfaces/PropertiesOrderOptions.md) | The configuration, specifying which properties should come first, which should come last and whether to sort the rest of properties. |
+| `inplace?` | `boolean` | A boolean flag, specifying whether changes should be performed on the source object itself (expensive) or on a cloned copy. |
+
+#### Returns
+
+`Record`<`string`, `T`\>
+
+An object with re-ordered properties.  If inplace is set to true, function returns reference to source.
+If inplace is set to false, then the return value is a new object with properties, copied from source.  If inplace
+is undefined, then the return value can be either source or its clone (depending on options).
+
+#### Defined in
+
+transform/objects.ts:100

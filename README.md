@@ -47,6 +47,22 @@ const FileSize = ({ size: number }) => {
 
 ## Examples
 
+### Transforming Objects
+
+Normalizing plain JS objects to make them more readable (in JSON)
+
+```js
+const { reorderProperties } = require("@js-data-tools/js-helpers");
+
+const normalized = reorderProperties(
+    { version: "1.0.0", name: "js-helpers", author: "Sergey", license: "MIT", main: "index.js", files: ["dist"] },
+    { first: ["name", "version"], last: ["license"], sort: true }
+);
+console.log(JSON.stringify(normalized));
+// {"name":"js-helpers","version":"1.0.0","author":"Sergey","files":["dist"],"main":"index.js","license":"MIT"}
+```
+
+
 ### Formatting values
 
 ```js

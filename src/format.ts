@@ -23,7 +23,7 @@ export const NUMERIC_UNITS = ["", "K", "M", "G", "T", "P"]; // Power of 1000
  */
 export function formatSize(sizeInBytes: number, base: 1000 | 1024 = 1000, unitNames?: string[]): string {
     const units = unitNames || (base === 1024 ? IEC_SIZE_UNITS : SI_SIZE_UNITS);
-    const [value, i] = compactNumber(sizeInBytes, units.length, base || 1000);
+    const [value, i] = compactNumber(sizeInBytes, units.length, base);
     return value + " " + units[i];
 }
 
@@ -53,20 +53,20 @@ export function formatCompact(value: number): string {
  * If duration is in the range between 1 second and 1 minute, it will be measured in seconds (up to two decimal digits).
  * Durations between one and two minutes will be measured in seconds (as an integer number)
  * And finally, the duration longer than 2 minutes will be presented as "M min [S sec]".
- * 
+ *
  * @since 0.2.0
  * @category format
  * @param {number} durationMsec - The duration (in milliseconds) to format
  * @returns A string, representing given duration in milliseconds or seconds (whatever is shorter)
- * 
+ *
  * @example
- * 
+ *
  * formatDuration(925);       // 925 msec
  * formatDuration(53256);     // 53.26 sec
  * formatDuration(65256);     // 65 sec
  * formatDuration(127874);    // 2 min 8 sec
  * formatDuration(180014);    // 3 min
- * 
+ *
  */
 export function formatDuration(durationMsec: number): string {
     if (durationMsec < 1000) {

@@ -49,6 +49,21 @@ const FileSize = ({ size: number }) => {
 
 ## Examples
 
+### Transforming Objects
+
+Normalizing plain JS objects to make them more readable (in JSON)
+
+```js
+const { reorderProperties } = require("@js-data-tools/js-helpers");
+
+const normalized = reorderProperties(
+    { version: "1.0.0", name: "js-helpers", author: "Sergey", license: "MIT", main: "index.js", files: ["dist"] },
+    { first: ["name", "version"], last: ["license"], sort: true }
+);
+console.log(JSON.stringify(normalized));
+// {"name":"js-helpers","version":"1.0.0","author":"Sergey","files":["dist"],"main":"index.js","license":"MIT"}
+```
+
 ### Formatting values
 
 ```js
@@ -113,7 +128,7 @@ console.log(macAddressAsString(45459793942n, ":")); // "00:0a:95:9d:68:16"
 
 ## Documentation
 
-A reference guide, generated from sources: [Reference Root](docs/ref/modules.html)
+A reference guide, generated from sources: [Reference Root](docs/ref/modules.md)
 
 [codecov-url]: https://codecov.io/gh/js-data-tools/js-helpers
 [codecov-image]: https://codecov.io/gh/js-data-tools/js-helpers/branch/master/graph/badge.svg?token=MZRT5GHT55

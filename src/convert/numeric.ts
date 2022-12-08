@@ -41,7 +41,7 @@ export function roundNumber(value: number, maxDecimalDigits = 2) {
  * @category convert
  * @param {number} value The numeric value to convert.
  * @param {number} [maxPower=4] The maximal allowed power of the base (used to make sure we have a unit name for the power)
- * @param {number} [base=1000] The base for the power.
+ * @param {number} [base=1000] The base for the power (default is 1000).
  * @returns {[number, number]} The array, containing two numbers: the compact and power.
  */
 export function compactNumber(value: number, maxPower = 4, base = 1000): [compact: number, power: number] {
