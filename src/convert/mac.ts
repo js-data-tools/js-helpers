@@ -17,10 +17,10 @@ const macDelimiterPattern = /[-:]/g;
  * macAddressAsString(BigInt(45459793942), ":");
  * // => "00:0a:95:9d:68:16"
  *
- * macAddressAsString(BigInt(45459793942), "-");
+ * macAddressAsString(45459793942n, "-");
  * // => "00-0a-95-9d-68-16"
  *
- * macAddressAsString(BigInt(45459793942), "");
+ * macAddressAsString(45459793942n, "");
  * // => "000a959d6816"
  *
  * macAddressAsString("00:0a:95:9d:68:16", "-");
@@ -96,13 +96,13 @@ export function macAddressAsString(mac: bigint | string, format?: "-" | ":" | ""
  * @example
  *
  * macAddressAsNumber("00:0a:95:9d:68:16");
- * // => bigint(45459793942)
+ * // => 45459793942n
  *
  * macAddressAsNumber("00-0a-95-9d-68-16");
- * // => bigint(45459793942)
+ * // => 45459793942n
  *
  * macAddressAsNumber("000a959d6816");
- * // => bigint(45459793942)
+ * // => 45459793942n
  *
  * macAddressAsNumber(45459793942);
  * // => 45459793942

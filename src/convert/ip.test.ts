@@ -21,7 +21,7 @@ describe("test ipv4AsNumber()", () => {
 
     it("ipv4AsNumber(string) returns correct IP", () => {
         const actual = ipv4AsNumber("172.22.0.0");
-        expect(actual).toEqual(-1407844352);
+        expect(actual).toEqual(2887122944);
     });
 });
 
