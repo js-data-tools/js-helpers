@@ -10,7 +10,6 @@
     "downlevelIteration": true,
     "esModuleInterop": true,
     "typeRoots": ["node_modules/@types"],
-    "sourceMap": true,
     "removeComments": true
   },
   "include": ["src"],

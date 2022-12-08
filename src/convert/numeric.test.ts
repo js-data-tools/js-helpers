@@ -22,6 +22,11 @@ describe("Test numeric convert helpers", () => {
             const actual = roundNumber(Math.PI, 7);
             expect(actual).toBe(3.1415927);
         });
+
+        it("roundNumber(3.141592653589793, -1) returns number as-is", () => {
+            const actual = roundNumber(3.141592653589793, -1);
+            expect(actual).toBe(3.141592653589793);
+        });
     });
 
     describe("Test compactNumber()", () => {
@@ -50,12 +55,12 @@ describe("Test numeric convert helpers", () => {
             expect(actual).toStrictEqual([1.23, 2]);
         });
 
-        it("compactNumber(1234567, 1) => [1235, 2]", () => {
+        it("compactNumber(1234567, 1) => [1235, 1]", () => {
             const actual = compactNumber(1234567, 1);
             expect(actual).toStrictEqual([1235, 1]);
         });
 
-        it("compactNumber(1234567890) => [1235, 2]", () => {
+        it("compactNumber(1234567890) => [1.23, 3]", () => {
             const actual = compactNumber(1234567890);
             expect(actual).toStrictEqual([1.23, 3]);
         });

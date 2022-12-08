@@ -112,10 +112,9 @@ export function takeUntil<T>(
 }
 
 /**
- *
+ * Skip (up to) first N elements of the given iterable collection.
  * @since 0.1.2
  * @category iterable
- * Skip (up to) first N elements of the given iterable collection.
  * @param from The enumerable collection to skip elements of.
  * @param count The number of elements to skip
  */

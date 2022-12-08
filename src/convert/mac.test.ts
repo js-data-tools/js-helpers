@@ -9,17 +9,17 @@ describe("test macAddressAsNumber()", () => {
 
     it("macAddressAsNumber(BigInt) returns parameter without changes", () => {
         const actual = macAddressAsNumber(BigInt(45459793942));
-        expect(actual).toEqual(BigInt(45459793942));
+        expect(actual).toEqual(45459793942n);
     });
 
     it("macAddressAsNumber(string with colons) returns correct MAC address", () => {
         const actual = macAddressAsNumber("00:0a:95:9d:68:16");
-        expect(actual).toEqual(BigInt(45459793942));
+        expect(actual).toEqual(45459793942n);
     });
 
     it("macAddressAsNumber(string with dashes) returns correct MAC address", () => {
         const actual = macAddressAsNumber("00-0a-95-9d-68-16");
-        expect(actual).toEqual(BigInt(45459793942));
+        expect(actual).toEqual(45459793942n);
     });
 });
 
@@ -30,12 +30,12 @@ describe("test macAddressAsString()", () => {
     });
 
     it('macAddressAsString(number, "-") returns correct MAC address string', () => {
-        const actual = macAddressAsString(BigInt(45459793942), "-");
+        const actual = macAddressAsString(45459793942n, "-");
         expect(actual).toEqual("00-0a-95-9d-68-16");
     });
 
     it('macAddressAsString(number, "") returns correct MAC address string', () => {
-        const actual = macAddressAsString(BigInt(45459793942), "");
+        const actual = macAddressAsString(45459793942n, "");
         expect(actual).toEqual("000a959d6816");
     });
 

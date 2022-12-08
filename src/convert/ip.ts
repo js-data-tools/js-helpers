@@ -68,7 +68,7 @@ export function ipv4AsNumber(ip: number | string): number {
     ip.split(".").forEach((token, i) => {
         result += parseInt(token, 10) << (8 * (3 - i));
     });
-    return result;
+    return result >>> 0; // Make it unsigned
 }
 
 /**
