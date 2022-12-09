@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { map, mapAsync } from "../iterable";
 
 /**
@@ -28,7 +29,6 @@ export function parseJsonLines<T>(
  */
 export function parseJsonLinesAsync<T>(
     textLines: AsyncIterable<string>,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     reviver?: (this: any, key: string, value: any) => any
 ): AsyncIterable<T> {
     return mapAsync(textLines, (line: string) => <T>JSON.parse(line, reviver));
@@ -40,6 +40,7 @@ export function parseJsonLinesAsync<T>(
  * @since 0.1.2
  * @category json
  * @param value - The value to render as an NDJSON (JSON line).
+ * @param replacer - An optional function that transforms the results (see JSON.stringify). 
  * @returns {string} A string with JSON representation of the given value (no whitespace or line breaks in the middle), followed by a line break.
  * @example
  *
@@ -57,6 +58,7 @@ export function parseJsonLinesAsync<T>(
  *
  * // => `[{"name":"John","age":23,"male":true},{"name":"Mary","age":21}]`
  */
-export function toJsonLine(value: unknown): string {
-    return JSON.stringify(value) + "\n";
+export function toJsonLine(value: unknown, replacer?: (key: string, value: any) => any): string;
+export function toJsonLine(value: unknown, replacer?: (this: any, key: string, value: any) => any): string {
+    return JSON.stringify(value, replacer) + "\n";
 }
