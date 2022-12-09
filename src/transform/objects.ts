@@ -32,7 +32,6 @@ export interface PropertiesOrderOptions {
     sortDescending?: boolean;
 }
 
-
 /**
  * Re-orders values in a string array, according to user preferences, putting specific strings at the beginning,
  * others at the end, and optionally sorting the rest of values (in the middle).
@@ -44,7 +43,7 @@ export interface PropertiesOrderOptions {
  * Calling this function in loop should work fast enough on a decent amount of records, but it is not optimized for bulk processing.
  * @category transform
  * @since 0.3.0
- * 
+ *
  * @example
  *
  * orderNames(
@@ -76,7 +75,8 @@ export function orderNames(names: string[], options: PropertiesOrderOptions): st
 }
 
 /**
- * 
+ * Re-orders properties of the given JS plain object (containing only string keys) - useful for serializing to JSON.
+ *
  * @param source - The source object to re-order properties of.
  * @param options - The configuration, specifying which properties should come first, which should come last and whether to sort the rest of properties.
  * @param inplace - A boolean flag, specifying whether changes should be performed on the source object itself (expensive) or on a cloned copy.
@@ -85,17 +85,17 @@ export function orderNames(names: string[], options: PropertiesOrderOptions): st
  * is undefined, then the return value can be either source or its clone (depending on options).
  * @category transform
  * @since 0.3.0
- * 
+ *
  * @example
- * 
+ *
  * const normalized = reorderProperties(
  *     { version: "1.0.0", name: "js-helpers", author: "Sergey", license: "MIT", main: "index.js", files: ["dist"] },
  *     { first: ["name", "version"], last: ["license"], sort: true }
  * );
- * 
+ *
  * console.log(JSON.stringify(normalized));
  * // => {"name":"js-helpers","version":"1.0.0","author":"Sergey","files":["dist"],"main":"index.js","license":"MIT"}
- * 
+ *
  */
 export function reorderProperties<T = unknown>(
     source: Record<string, T>,

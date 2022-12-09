@@ -35,7 +35,8 @@
     "lint:fix": "eslint . --fix --ext .js,.jsx,.ts,.tsx",
     "prepack": "pnpm run build",
     "build": "rimraf dist & pnpm run compile:node & pnpm run compile:esm & pnpm compile:types",
-    "test": "vitest",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "doc:generate": "typedoc --gitRevision master --out docs/ref src/index.ts"
   },

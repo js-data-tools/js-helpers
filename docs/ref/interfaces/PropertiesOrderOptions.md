@@ -27,7 +27,7 @@ If some name appears in both "first" and "last" lists, the "first" has higher pr
 
 #### Defined in
 
-transform/objects.ts:12
+[transform/objects.ts:12](https://github.com/js-data-tools/js-helpers/blob/master/src/transform/objects.ts#L12)
 
 ___
 
@@ -43,7 +43,7 @@ If some name appears in both "first" and "last" lists, the "first" has higher pr
 
 #### Defined in
 
-transform/objects.ts:21
+[transform/objects.ts:21](https://github.com/js-data-tools/js-helpers/blob/master/src/transform/objects.ts#L21)
 
 ___
 
@@ -56,7 +56,7 @@ lists will not participate in the sort.
 
 #### Defined in
 
-transform/objects.ts:27
+[transform/objects.ts:27](https://github.com/js-data-tools/js-helpers/blob/master/src/transform/objects.ts#L27)
 
 ___
 
@@ -68,4 +68,4 @@ A boolean flag, specifying whether to sort property names in the descending orde
 
 #### Defined in
 
-transform/objects.ts:32
+[transform/objects.ts:32](https://github.com/js-data-tools/js-helpers/blob/master/src/transform/objects.ts#L32)

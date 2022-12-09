@@ -1,6 +1,6 @@
 // Verify that import of main modules works
 import { describe, it, expect } from "vitest";
-import { ipv4AsNumber, map, filter, parseJsonLines, reorderProperties, isEmptyMap } from ".";
+import { ipv4AsNumber, map, filter, parseJsonLines, reorderProperties, isEmptyMap, ignoreDefaults } from ".";
 
 describe("test re-exports: ", () => {
     it("convert: ipv4AsNumber", () => {
@@ -19,6 +19,10 @@ describe("test re-exports: ", () => {
         expect(parseJsonLines).toBeTypeOf("function");
     });
 
+    it("json: ignoreDefaults", () => {
+        expect(ignoreDefaults).toBeTypeOf("function");
+    });
+    
     it("transform: reorderProperties", () => {
         expect(reorderProperties).toBeTypeOf("function");
     });

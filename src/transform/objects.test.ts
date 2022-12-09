@@ -42,27 +42,45 @@ describe("Test orderNames", () => {
 describe("Test reorderProperties", () => {
     it("given first, last and sort options, should return a new object with correct order of properties", () => {
         const actual = reorderProperties(
-            { version: "1.0.0", name: "js-helpers", author: "Sergey", license: "MIT", main: "index.js", files: ["dist"] },
+            {
+                version: "1.0.0",
+                name: "js-helpers",
+                author: "Sergey",
+                license: "MIT",
+                main: "index.js",
+                files: ["dist"],
+            },
             { first: ["name", "version"], last: ["license"], sort: true }
         );
-        expect(JSON.stringify(actual)).toBe('{"name":"js-helpers","version":"1.0.0","author":"Sergey","files":["dist"],"main":"index.js","license":"MIT"}');
+        expect(JSON.stringify(actual)).toBe(
+            '{"name":"js-helpers","version":"1.0.0","author":"Sergey","files":["dist"],"main":"index.js","license":"MIT"}'
+        );
     });
 
     it("update object in-place", () => {
-        const source = { version: "1.0.0", name: "js-helpers", author: "Sergey", license: "MIT", main: "index.js", files: ["dist"] };
+        const source = {
+            version: "1.0.0",
+            name: "js-helpers",
+            author: "Sergey",
+            license: "MIT",
+            main: "index.js",
+            files: ["dist"],
+        };
         const actual = reorderProperties(source, { first: ["name", "version"], last: ["license"], sort: true }, true);
         expect(actual).toBe(source); // Return value should be the same as source
-        expect(JSON.stringify(source)).toBe('{"name":"js-helpers","version":"1.0.0","author":"Sergey","files":["dist"],"main":"index.js","license":"MIT"}');
+        expect(JSON.stringify(source)).toBe(
+            '{"name":"js-helpers","version":"1.0.0","author":"Sergey","files":["dist"],"main":"index.js","license":"MIT"}'
+        );
     });
 
     it("empty options and omitted inplace param should return the same object", () => {
-        const source = { version: "1.0.0", name: "js-helpers"};
-        const actual = reorderProperties(source, { first: [], last: [], sort: false});
+        const source = { version: "1.0.0", name: "js-helpers" };
+        const actual = reorderProperties(source, { first: [], last: [], sort: false });
         expect(actual).toBe(source);
     });
 
     it("empty options and inplace set to false should return a clone of the source object", () => {
-        const source = { version: "1.0.0", name: "js-helpers"};
+        const source = { version: "1.0.0", name: "js-helpers" };
         const actual = reorderProperties(source, {}, false);
         expect(actual).not.toBe(source);
         expect(JSON.stringify(source)).toBe('{"version":"1.0.0","name":"js-helpers"}');

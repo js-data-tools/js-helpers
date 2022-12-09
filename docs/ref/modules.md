@@ -65,6 +65,8 @@
 
 ### json Functions
 
+- [ignoreDefaults](modules.md#ignoredefaults)
+- [ignoreEmpty](modules.md#ignoreempty)
 - [parseJsonLines](modules.md#parsejsonlines)
 - [parseJsonLinesAsync](modules.md#parsejsonlinesasync)
 - [toJsonLine](modules.md#tojsonline)
@@ -73,15 +75,18 @@
 
 - [alwaysTrue](modules.md#alwaystrue)
 - [and](modules.md#and)
+- [isDefaultValue](modules.md#isdefaultvalue)
 - [isEmptyArray](modules.md#isemptyarray)
 - [isEmptyMap](modules.md#isemptymap)
 - [isEmptyObject](modules.md#isemptyobject)
 - [isEmptySet](modules.md#isemptyset)
+- [isEmptyValue](modules.md#isemptyvalue)
 - [isNonEmptyArray](modules.md#isnonemptyarray)
 - [isNonEmptyMap](modules.md#isnonemptymap)
 - [isNonEmptyObject](modules.md#isnonemptyobject)
 - [isNonEmptySet](modules.md#isnonemptyset)
 - [isNullOrUndefined](modules.md#isnullorundefined)
+- [isUndefined](modules.md#isundefined)
 - [not](modules.md#not)
 - [notNullOrUndefined](modules.md#notnullorundefined)
 - [or](modules.md#or)
@@ -1215,6 +1220,102 @@ ___
 
 ## json Functions
 
+### ignoreDefaults
+
+▸ **ignoreDefaults**(`key`, `value`): `any`
+
+A reviver function for the JSON.stringify, which will remove properties with empty values:
+undefined, nulls, empty strings, empty arrays, empty object literals.
+
+**`Since`**
+
+0.3.0
+
+**`Example`**
+
+```ts
+JSON.stringify({ 
+     major: 1,
+     minor: 0,           // Not empty
+     patch: undefined,   // Empty
+     revision: "",       // Empty
+     final: false,       // Not empty
+     author: "Sergey",
+     scope: null,        // Empty
+     reviewers: [],      // Empty
+     coverage: {}        // Empty
+ }, ignoreEmpty);
+
+// {"major":1,"minor":0,"final":false,"author":"Sergey"}
+```
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `key` | `string` | The name of the property being inspected (ignored) |
+| `value` | `any` | The value of the property to inspect and replace with |
+
+#### Returns
+
+`any`
+
+undefined if the value is empty, otherwise the value itself.
+
+#### Defined in
+
+json/serialize.ts:58
+
+___
+
+### ignoreEmpty
+
+▸ **ignoreEmpty**(`key`, `value`): `any`
+
+A reviver function for the JSON.stringify, which will remove properties with empty values:
+undefined, nulls, empty strings, empty arrays, empty object literals.
+
+**`Since`**
+
+0.3.0
+
+**`Example`**
+
+```ts
+JSON.stringify({ 
+     major: 1,
+     minor: 0,           // Not empty
+     patch: undefined,   // Empty
+     revision: "",       // Empty
+     final: false,       // Not empty
+     author: "Sergey",
+     scope: null,        // Empty
+     reviewers: [],      // Empty
+     coverage: {}        // Empty
+ }, ignoreEmpty);
+
+// {"major":1,"minor":0,"final":false,"author":"Sergey"}
+```
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `key` | `string` | The name of the property being inspected (ignored) |
+| `value` | `any` | The value of the property to inspect and replace with |
+
+#### Returns
+
+`any`
+
+undefined if the value is empty, otherwise the value itself.
+
+#### Defined in
+
+json/serialize.ts:29
+
+___
+
 ### parseJsonLines
 
 ▸ **parseJsonLines**<`T`\>(`textLines`, `reviver?`): `Iterable`<`T`\>
@@ -1395,7 +1496,36 @@ A new [Predicate](modules.md#predicate), which returns true if all inner conditi
 
 #### Defined in
 
-[predicates.ts:152](https://github.com/js-data-tools/js-helpers/blob/master/src/predicates.ts#L152)
+[predicates.ts:215](https://github.com/js-data-tools/js-helpers/blob/master/src/predicates.ts#L215)
+
+___
+
+### isDefaultValue
+
+▸ **isDefaultValue**(`value`): `boolean`
+
+Checks if given value is default and can be safely omitted from serialization.  Empty values are null, undefined, empty string,
+empty array, empty object, zero (numeric), false (boolean).
+
+**`Since`**
+
+0.3.0
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `value` | `unknown` | The value to inspect |
+
+#### Returns
+
+`boolean`
+
+true if value is empty; otherwise false.
+
+#### Defined in
+
+[predicates.ts:186](https://github.com/js-data-tools/js-helpers/blob/master/src/predicates.ts#L186)
 
 ___
 
@@ -1429,7 +1559,7 @@ true if the given array is null, undefined or contains no elements.
 
 #### Defined in
 
-[predicates.ts:52](https://github.com/js-data-tools/js-helpers/blob/master/src/predicates.ts#L52)
+[predicates.ts:64](https://github.com/js-data-tools/js-helpers/blob/master/src/predicates.ts#L64)
 
 ___
 
@@ -1464,7 +1594,7 @@ true if the given map object is null, undefined or contains no elements.
 
 #### Defined in
 
-[predicates.ts:100](https://github.com/js-data-tools/js-helpers/blob/master/src/predicates.ts#L100)
+[predicates.ts:112](https://github.com/js-data-tools/js-helpers/blob/master/src/predicates.ts#L112)
 
 ___
 
@@ -1498,7 +1628,7 @@ true if the given object is null, undefined or contains no public properties.
 
 #### Defined in
 
-[predicates.ts:124](https://github.com/js-data-tools/js-helpers/blob/master/src/predicates.ts#L124)
+[predicates.ts:136](https://github.com/js-data-tools/js-helpers/blob/master/src/predicates.ts#L136)
 
 ___
 
@@ -1532,7 +1662,35 @@ true if given set is null, undefined or contains no elements.
 
 #### Defined in
 
-[predicates.ts:76](https://github.com/js-data-tools/js-helpers/blob/master/src/predicates.ts#L76)
+[predicates.ts:88](https://github.com/js-data-tools/js-helpers/blob/master/src/predicates.ts#L88)
+
+___
+
+### isEmptyValue
+
+▸ **isEmptyValue**(`value`): `boolean`
+
+Checks if given value is empty (usually to omit it from serialization).  Empty values are null, undefined, empty string, empty array, empty object.
+
+**`Since`**
+
+0.3.0
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `value` | `unknown` | The value to inspect |
+
+#### Returns
+
+`boolean`
+
+true if value is empty; otherwise false.
+
+#### Defined in
+
+[predicates.ts:159](https://github.com/js-data-tools/js-helpers/blob/master/src/predicates.ts#L159)
 
 ___
 
@@ -1566,7 +1724,7 @@ true if the given array exists (not null / undefined) and contains at least one 
 
 #### Defined in
 
-[predicates.ts:64](https://github.com/js-data-tools/js-helpers/blob/master/src/predicates.ts#L64)
+[predicates.ts:76](https://github.com/js-data-tools/js-helpers/blob/master/src/predicates.ts#L76)
 
 ___
 
@@ -1601,7 +1759,7 @@ true if the given map is not null / undefined and contains at least one element.
 
 #### Defined in
 
-[predicates.ts:112](https://github.com/js-data-tools/js-helpers/blob/master/src/predicates.ts#L112)
+[predicates.ts:124](https://github.com/js-data-tools/js-helpers/blob/master/src/predicates.ts#L124)
 
 ___
 
@@ -1635,7 +1793,7 @@ true if the given object is not null / undefined and contains at least one prope
 
 #### Defined in
 
-[predicates.ts:136](https://github.com/js-data-tools/js-helpers/blob/master/src/predicates.ts#L136)
+[predicates.ts:148](https://github.com/js-data-tools/js-helpers/blob/master/src/predicates.ts#L148)
 
 ___
 
@@ -1669,7 +1827,7 @@ true if the given set is not null / undefined and contains at least one element.
 
 #### Defined in
 
-[predicates.ts:88](https://github.com/js-data-tools/js-helpers/blob/master/src/predicates.ts#L88)
+[predicates.ts:100](https://github.com/js-data-tools/js-helpers/blob/master/src/predicates.ts#L100)
 
 ___
 
@@ -1700,6 +1858,40 @@ Check if the given value is null or undefined.
 `boolean`
 
 true if the input parameter is null or undefined, otherwise false.
+
+#### Defined in
+
+[predicates.ts:40](https://github.com/js-data-tools/js-helpers/blob/master/src/predicates.ts#L40)
+
+___
+
+### isUndefined
+
+▸ **isUndefined**<`T`\>(`input`): `boolean`
+
+Check if the given value is undefined.
+
+**`Since`**
+
+0.3.0
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `T` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `input` | `undefined` \| `T` | The value to inspect. |
+
+#### Returns
+
+`boolean`
+
+true if the input parameter is undefined, otherwise false.
 
 #### Defined in
 
@@ -1737,7 +1929,7 @@ A new [Predicate](modules.md#predicate), which evaluates the given condition and
 
 #### Defined in
 
-[predicates.ts:190](https://github.com/js-data-tools/js-helpers/blob/master/src/predicates.ts#L190)
+[predicates.ts:253](https://github.com/js-data-tools/js-helpers/blob/master/src/predicates.ts#L253)
 
 ___
 
@@ -1771,7 +1963,7 @@ false if the input value is null or undefined, otherwise true.
 
 #### Defined in
 
-[predicates.ts:40](https://github.com/js-data-tools/js-helpers/blob/master/src/predicates.ts#L40)
+[predicates.ts:52](https://github.com/js-data-tools/js-helpers/blob/master/src/predicates.ts#L52)
 
 ___
 
@@ -1805,7 +1997,7 @@ A new [Predicate](modules.md#predicate), which evaluate given conditions on an i
 
 #### Defined in
 
-[predicates.ts:171](https://github.com/js-data-tools/js-helpers/blob/master/src/predicates.ts#L171)
+[predicates.ts:234](https://github.com/js-data-tools/js-helpers/blob/master/src/predicates.ts#L234)
 
 ___
 
@@ -1889,13 +2081,15 @@ A new array, containing values from the names array, ordered according to option
 
 #### Defined in
 
-transform/objects.ts:56
+[transform/objects.ts:55](https://github.com/js-data-tools/js-helpers/blob/master/src/transform/objects.ts#L55)
 
 ___
 
 ### reorderProperties
 
 ▸ **reorderProperties**<`T`\>(`source`, `options`, `inplace?`): `Record`<`string`, `T`\>
+
+Re-orders properties of the given JS plain object (containing only string keys) - useful for serializing to JSON.
 
 **`Since`**
 
@@ -1937,4 +2131,4 @@ is undefined, then the return value can be either source or its clone (depending
 
 #### Defined in
 
-transform/objects.ts:100
+[transform/objects.ts:100](https://github.com/js-data-tools/js-helpers/blob/master/src/transform/objects.ts#L100)
