@@ -1,3 +1,64 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { isDefaultValue, isEmptyValue } from "../predicates";
+
+/**
+ * A reviver function for the JSON.stringify, which will remove properties with empty values:
+ * undefined, nulls, empty strings, empty arrays, empty object literals.
+ * @param key - The name of the property being inspected (ignored)
+ * @param value - The value of the property to inspect and replace with
+ * @returns undefined if the value is empty, otherwise the value itself.
+ * @category serialize
+ * @since 0.3.0
+ * @example
+ * 
+ * JSON.stringify({ 
+ *      major: 1,
+ *      minor: 0,           // Not empty
+ *      patch: undefined,   // Empty
+ *      revision: "",       // Empty
+ *      final: false,       // Not empty
+ *      author: "Sergey",
+ *      scope: null,        // Empty
+ *      reviewers: [],      // Empty
+ *      coverage: {}        // Empty
+ *  }, ignoreEmpty);
+ * 
+ * // {"major":1,"minor":0,"final":false,"author":"Sergey"}
+ * 
+ */
+export function ignoreEmpty(key: string, value: any): any {
+    return isEmptyValue(value) ? undefined : value;
+}
+
+/**
+ * A reviver function for the JSON.stringify, which will remove properties with empty values:
+ * undefined, nulls, empty strings, empty arrays, empty object literals.
+ * @param key - The name of the property being inspected (ignored)
+ * @param value - The value of the property to inspect and replace with
+ * @returns undefined if the value is empty, otherwise the value itself.
+ * @category serialize
+ * @since 0.3.0
+ * @example
+ * 
+ * JSON.stringify({ 
+ *      major: 1,
+ *      minor: 0,           // Not empty
+ *      patch: undefined,   // Empty
+ *      revision: "",       // Empty
+ *      final: false,       // Not empty
+ *      author: "Sergey",
+ *      scope: null,        // Empty
+ *      reviewers: [],      // Empty
+ *      coverage: {}        // Empty
+ *  }, ignoreEmpty);
+ * 
+ * // {"major":1,"minor":0,"final":false,"author":"Sergey"}
+ * 
+ */
+export function ignoreDefaults(key: string, value: any): any {
+    return isDefaultValue(value) ? undefined : value;
+}
+
 /**
  * Configuration, specifying how to re-order properties of a plain JavaScript object
  */
@@ -41,7 +102,7 @@ export interface PropertiesOrderOptions {
  * @returns A new array, containing values from the names array, ordered according to options.
  * @description This function is intended to help with re-ordering properties of a plain JavaScript object (actually JSON).
  * Calling this function in loop should work fast enough on a decent amount of records, but it is not optimized for bulk processing.
- * @category transform
+ * @category serialize
  * @since 0.3.0
  *
  * @example
@@ -83,7 +144,7 @@ export function orderNames(names: string[], options: PropertiesOrderOptions): st
  * @returns An object with re-ordered properties.  If inplace is set to true, function returns reference to source.
  * If inplace is set to false, then the return value is a new object with properties, copied from source.  If inplace
  * is undefined, then the return value can be either source or its clone (depending on options).
- * @category transform
+ * @category serialize
  * @since 0.3.0
  *
  * @example

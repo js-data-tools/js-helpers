@@ -65,8 +65,6 @@
 
 ### json Functions
 
-- [ignoreDefaults](modules.md#ignoredefaults)
-- [ignoreEmpty](modules.md#ignoreempty)
 - [parseJsonLines](modules.md#parsejsonlines)
 - [parseJsonLinesAsync](modules.md#parsejsonlinesasync)
 - [toJsonLine](modules.md#tojsonline)
@@ -95,8 +93,10 @@
 
 - [trackProgressAsync](modules.md#trackprogressasync)
 
-### transform Functions
+### serialize Functions
 
+- [ignoreDefaults](modules.md#ignoredefaults)
+- [ignoreEmpty](modules.md#ignoreempty)
 - [orderNames](modules.md#ordernames)
 - [reorderProperties](modules.md#reorderproperties)
 
@@ -1220,102 +1220,6 @@ ___
 
 ## json Functions
 
-### ignoreDefaults
-
-▸ **ignoreDefaults**(`key`, `value`): `any`
-
-A reviver function for the JSON.stringify, which will remove properties with empty values:
-undefined, nulls, empty strings, empty arrays, empty object literals.
-
-**`Since`**
-
-0.3.0
-
-**`Example`**
-
-```ts
-JSON.stringify({ 
-     major: 1,
-     minor: 0,           // Not empty
-     patch: undefined,   // Empty
-     revision: "",       // Empty
-     final: false,       // Not empty
-     author: "Sergey",
-     scope: null,        // Empty
-     reviewers: [],      // Empty
-     coverage: {}        // Empty
- }, ignoreEmpty);
-
-// {"major":1,"minor":0,"final":false,"author":"Sergey"}
-```
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `key` | `string` | The name of the property being inspected (ignored) |
-| `value` | `any` | The value of the property to inspect and replace with |
-
-#### Returns
-
-`any`
-
-undefined if the value is empty, otherwise the value itself.
-
-#### Defined in
-
-json/serialize.ts:58
-
-___
-
-### ignoreEmpty
-
-▸ **ignoreEmpty**(`key`, `value`): `any`
-
-A reviver function for the JSON.stringify, which will remove properties with empty values:
-undefined, nulls, empty strings, empty arrays, empty object literals.
-
-**`Since`**
-
-0.3.0
-
-**`Example`**
-
-```ts
-JSON.stringify({ 
-     major: 1,
-     minor: 0,           // Not empty
-     patch: undefined,   // Empty
-     revision: "",       // Empty
-     final: false,       // Not empty
-     author: "Sergey",
-     scope: null,        // Empty
-     reviewers: [],      // Empty
-     coverage: {}        // Empty
- }, ignoreEmpty);
-
-// {"major":1,"minor":0,"final":false,"author":"Sergey"}
-```
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `key` | `string` | The name of the property being inspected (ignored) |
-| `value` | `any` | The value of the property to inspect and replace with |
-
-#### Returns
-
-`any`
-
-undefined if the value is empty, otherwise the value itself.
-
-#### Defined in
-
-json/serialize.ts:29
-
-___
-
 ### parseJsonLines
 
 ▸ **parseJsonLines**<`T`\>(`textLines`, `reviver?`): `Iterable`<`T`\>
@@ -1347,7 +1251,7 @@ An iterable collection of parsed values.
 
 #### Defined in
 
-[json/json-lines.ts:12](https://github.com/js-data-tools/js-helpers/blob/master/src/json/json-lines.ts#L12)
+[json/json-lines.ts:13](https://github.com/js-data-tools/js-helpers/blob/master/src/json/json-lines.ts#L13)
 
 ___
 
@@ -1382,13 +1286,13 @@ An iterable asynchronous stream of parsed values.
 
 #### Defined in
 
-[json/json-lines.ts:29](https://github.com/js-data-tools/js-helpers/blob/master/src/json/json-lines.ts#L29)
+[json/json-lines.ts:30](https://github.com/js-data-tools/js-helpers/blob/master/src/json/json-lines.ts#L30)
 
 ___
 
 ### toJsonLine
 
-▸ **toJsonLine**(`value`): `string`
+▸ **toJsonLine**(`value`, `replacer?`): `string`
 
 Render the given value as an NDJSON entry: a JSON without whitespace, followed by a line break.
 
@@ -1417,6 +1321,7 @@ toJsonLine([
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `value` | `unknown` | The value to render as an NDJSON (JSON line). |
+| `replacer?` | (`key`: `string`, `value`: `any`) => `any` | An optional function that transforms the results (see JSON.stringify). |
 
 #### Returns
 
@@ -1426,7 +1331,7 @@ A string with JSON representation of the given value (no whitespace or line brea
 
 #### Defined in
 
-[json/json-lines.ts:60](https://github.com/js-data-tools/js-helpers/blob/master/src/json/json-lines.ts#L60)
+[json/json-lines.ts:61](https://github.com/js-data-tools/js-helpers/blob/master/src/json/json-lines.ts#L61)
 
 ___
 
@@ -2038,7 +1943,103 @@ A new async iterable, monitoring the progress of the iteration.
 
 ___
 
-## transform Functions
+## serialize Functions
+
+### ignoreDefaults
+
+▸ **ignoreDefaults**(`key`, `value`): `any`
+
+A reviver function for the JSON.stringify, which will remove properties with empty values:
+undefined, nulls, empty strings, empty arrays, empty object literals.
+
+**`Since`**
+
+0.3.0
+
+**`Example`**
+
+```ts
+JSON.stringify({ 
+     major: 1,
+     minor: 0,           // Not empty
+     patch: undefined,   // Empty
+     revision: "",       // Empty
+     final: false,       // Not empty
+     author: "Sergey",
+     scope: null,        // Empty
+     reviewers: [],      // Empty
+     coverage: {}        // Empty
+ }, ignoreEmpty);
+
+// {"major":1,"minor":0,"final":false,"author":"Sergey"}
+```
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `key` | `string` | The name of the property being inspected (ignored) |
+| `value` | `any` | The value of the property to inspect and replace with |
+
+#### Returns
+
+`any`
+
+undefined if the value is empty, otherwise the value itself.
+
+#### Defined in
+
+serialize/normalize.ts:58
+
+___
+
+### ignoreEmpty
+
+▸ **ignoreEmpty**(`key`, `value`): `any`
+
+A reviver function for the JSON.stringify, which will remove properties with empty values:
+undefined, nulls, empty strings, empty arrays, empty object literals.
+
+**`Since`**
+
+0.3.0
+
+**`Example`**
+
+```ts
+JSON.stringify({ 
+     major: 1,
+     minor: 0,           // Not empty
+     patch: undefined,   // Empty
+     revision: "",       // Empty
+     final: false,       // Not empty
+     author: "Sergey",
+     scope: null,        // Empty
+     reviewers: [],      // Empty
+     coverage: {}        // Empty
+ }, ignoreEmpty);
+
+// {"major":1,"minor":0,"final":false,"author":"Sergey"}
+```
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `key` | `string` | The name of the property being inspected (ignored) |
+| `value` | `any` | The value of the property to inspect and replace with |
+
+#### Returns
+
+`any`
+
+undefined if the value is empty, otherwise the value itself.
+
+#### Defined in
+
+serialize/normalize.ts:29
+
+___
 
 ### orderNames
 
@@ -2081,7 +2082,7 @@ A new array, containing values from the names array, ordered according to option
 
 #### Defined in
 
-[transform/objects.ts:55](https://github.com/js-data-tools/js-helpers/blob/master/src/transform/objects.ts#L55)
+serialize/normalize.ts:116
 
 ___
 
@@ -2131,4 +2132,4 @@ is undefined, then the return value can be either source or its clone (depending
 
 #### Defined in
 
-[transform/objects.ts:100](https://github.com/js-data-tools/js-helpers/blob/master/src/transform/objects.ts#L100)
+serialize/normalize.ts:161
