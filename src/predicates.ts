@@ -18,6 +18,18 @@ export function alwaysTrue<T>(input: T): boolean {
 }
 
 /**
+ * Check if the given value is undefined.
+ *
+ * @since 0.3.0
+ * @category predicates
+ * @param input - The value to inspect.
+ * @returns {boolean} true if the input parameter is undefined, otherwise false.
+ */
+export function isUndefined<T>(input: T | undefined): boolean {
+    return input === undefined;
+}
+
+/**
  * Check if the given value is null or undefined.
  *
  * @since 0.1.2
@@ -135,6 +147,57 @@ export function isEmptyObject<T extends object>(input: T | null | undefined): bo
  */
 export function isNonEmptyObject<T extends object>(input: T | null | undefined): input is T {
     return !!input && Object.keys(input).length > 0;
+}
+
+/**
+ * Checks if given value is empty (usually to omit it from serialization).  Empty values are null, undefined, empty string, empty array, empty object.
+ * @param value - The value to inspect
+ * @returns true if value is empty; otherwise false.
+ * @category predicates
+ * @since 0.3.0
+ */
+export function isEmptyValue(value: unknown): boolean {
+    if (value === null || value === undefined) {
+        return true;
+    }
+
+    switch (typeof value) {
+        case "string":
+            return !value;
+
+        case "object":
+            if (Array.isArray(value)) {
+                return !value.length;
+            }
+            return !Object.keys(value).length;
+    }
+
+    return false;
+}
+
+/**
+ * Checks if given value is default and can be safely omitted from serialization.  Empty values are null, undefined, empty string,
+ * empty array, empty object, zero (numeric), false (boolean).
+ * @param value - The value to inspect
+ * @returns true if value is empty; otherwise false.
+ * @category predicates
+ * @since 0.3.0
+ */
+export function isDefaultValue(value: unknown): boolean {
+    if (value === null || value === undefined) {
+        return true;
+    }
+
+    switch (typeof value) {
+        case "object":
+            if (Array.isArray(value)) {
+                return !value.length;
+            }
+            return !Object.keys(value).length;
+        
+        default:
+            return !value;
+    }
 }
 
 // ---------------------------------------------------------------------------------------

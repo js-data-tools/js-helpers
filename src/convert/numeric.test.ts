@@ -30,6 +30,11 @@ describe("Test numeric convert helpers", () => {
     });
 
     describe("Test compactNumber()", () => {
+        it("compactNumber(-3.1415926) => [-3.14, 0]", () => {
+            const actual = compactNumber(-3.1415926);
+            expect(actual).toStrictEqual([-3.14, 0]);
+        });
+
         it("compactNumber(123) => [123, 0]", () => {
             const actual = compactNumber(123);
             expect(actual).toStrictEqual([123, 0]);
