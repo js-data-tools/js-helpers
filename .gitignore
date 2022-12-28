@@ -30,3 +30,4 @@ yarn-error.log*
 # misc
 .DS_Store
 desktop.ini
+TODO.md
