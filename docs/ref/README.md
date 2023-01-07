@@ -49,6 +49,46 @@ const FileSize = ({ size: number }) => {
 
 ## Examples
 
+### Serializing to JSON
+
+Reordering properties in the plain JS objects to make them more readable (in JSON)
+
+```js
+const { reorderProperties } = require("@js-data-tools/js-helpers");
+
+const normalized = reorderProperties(
+    { version: "1.0.0", name: "js-helpers", author: "Sergey", license: "MIT", main: "index.js", files: ["dist"] },
+    { first: ["name", "version"], last: ["license"], sort: true }
+);
+console.log(JSON.stringify(normalized));
+// {"name":"js-helpers","version":"1.0.0","author":"Sergey","files":["dist"],"main":"index.js","license":"MIT"}
+```
+
+Removing empty properties (null, undefined, empty string, empty array, empty object literals) to make JSON shorter:
+
+```js
+const { ignoreEmpty } = require("@js-data-tools/js-helpers");
+
+const input = { name: "js-helpers", private: false, author: "", files: [], dependencies: {}, devDependencies: undefined };
+
+console.log(JSON.stringify(input));
+// {"name":"js-helpers","private":false,"author":"","files":[],"dependencies":{}}
+
+console.log(JSON.stringify(input), ignoreEmpty);
+// {"name":"js-helpers","private":false}
+```
+
+Removing properties with default values (empty/undefined value or zero or false) to make JSON shorter:
+
+```js
+const { ignoreDefaults } = require("@js-data-tools/js-helpers");
+
+const input = { name: "js-helpers", private: false, major: 1, minor: 0, author: "", files: [], dependencies: {}, devDependencies: undefined };
+
+console.log(JSON.stringify(input), ignoreDefaults);
+// {"name":"js-helpers","major":1}
+```
+
 ### Formatting values
 
 ```js
@@ -113,7 +153,7 @@ console.log(macAddressAsString(45459793942n, ":")); // "00:0a:95:9d:68:16"
 
 ## Documentation
 
-A reference guide, generated from sources: [Reference Root](docs/ref/modules.html)
+A reference guide, generated from sources: [Reference Root](docs/ref/modules.md)
 
 [codecov-url]: https://codecov.io/gh/js-data-tools/js-helpers
 [codecov-image]: https://codecov.io/gh/js-data-tools/js-helpers/branch/master/graph/badge.svg?token=MZRT5GHT55

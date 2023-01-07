@@ -2,15 +2,18 @@ import { describe, it, expect, vi } from "vitest";
 import {
     alwaysTrue,
     and,
+    isDefaultValue,
     isEmptyArray,
     isEmptyMap,
     isEmptyObject,
     isEmptySet,
+    isEmptyValue,
     isNonEmptyArray,
     isNonEmptyMap,
     isNonEmptyObject,
     isNonEmptySet,
     isNullOrUndefined,
+    isUndefined,
     not,
     notNullOrUndefined,
     or,
@@ -119,6 +122,16 @@ describe("test predicates", () => {
     });
 
     describe("test isNullOrUndefined() and notNullOrUndefined()", () => {
+        it("isUndefined(null) should return false", () => {
+            const actual = isUndefined(null);
+            expect(actual).toBeFalsy();
+        });
+
+        it("isUndefined(undefined) should return true", () => {
+            const actual = isUndefined(undefined);
+            expect(actual).toBeTruthy();
+        });
+
         it("isNullOrUndefined(null) should return true", () => {
             const actual = isNullOrUndefined(null);
             expect(actual).toBeTruthy();
@@ -337,4 +350,123 @@ describe("test predicates", () => {
             expect(actual).toBeTruthy();
         });
     });
+
+    describe("test isEmptyValue", () => {
+        it("returns true for undefined value", () => {
+            const actual = isEmptyValue(undefined);
+            expect(actual).toBeTruthy();
+        });
+
+        it("returns true for null value", () => {
+            const actual = isEmptyValue(null);
+            expect(actual).toBeTruthy();
+        });
+
+        it("returns true for empty string", () => {
+            const actual = isEmptyValue("");
+            expect(actual).toBeTruthy();
+        });
+
+        it("returns true for empty array", () => {
+            const actual = isEmptyValue([]);
+            expect(actual).toBeTruthy();
+        });
+
+        it("returns true for empty object literal", () => {
+            const actual = isEmptyValue({});
+            expect(actual).toBeTruthy();
+        });
+
+        it("returns false for numbers", () => {
+            const actual = isEmptyValue(0);
+            expect(actual).toBeFalsy();
+        });
+
+        it("returns false for booleans", () => {
+            const actual = isEmptyValue(false);
+            expect(actual).toBeFalsy();
+        });
+
+        it("returns false for non-empty string", () => {
+            const actual = isEmptyValue("a");
+            expect(actual).toBeFalsy();
+        });
+
+        it("returns false for non-empty array", () => {
+            const actual = isEmptyValue([1]);
+            expect(actual).toBeFalsy();
+        });
+
+        it("returns false for non-empty object literal", () => {
+            const actual = isEmptyValue({ version: "1.0" });
+            expect(actual).toBeFalsy();
+        });
+    });
+
+    describe("test isDefaultValue", () => {
+        it("returns true for undefined value", () => {
+            const actual = isDefaultValue(undefined);
+            expect(actual).toBeTruthy();
+        });
+
+        it("returns true for null value", () => {
+            const actual = isDefaultValue(null);
+            expect(actual).toBeTruthy();
+        });
+
+        it("returns true for empty string", () => {
+            const actual = isDefaultValue("");
+            expect(actual).toBeTruthy();
+        });
+
+        it("returns true for empty array", () => {
+            const actual = isDefaultValue([]);
+            expect(actual).toBeTruthy();
+        });
+
+        it("returns true for empty object literal", () => {
+            const actual = isDefaultValue({});
+            expect(actual).toBeTruthy();
+        });
+
+        it("returns true for zero", () => {
+            const actual = isDefaultValue(0);
+            expect(actual).toBeTruthy();
+        });
+
+        it("returns true for boolean false", () => {
+            const actual = isDefaultValue(false);
+            expect(actual).toBeTruthy();
+        });
+
+        it("returns false for non-zero numbers", () => {
+            const actual = isDefaultValue(3);
+            expect(actual).toBeFalsy();
+        });
+
+        it("returns false for non-zero bigint", () => {
+            const actual = isDefaultValue(3385475712442n);
+            expect(actual).toBeFalsy();
+        });
+
+        it("returns false for boolean true", () => {
+            const actual = isDefaultValue(true);
+            expect(actual).toBeFalsy();
+        });
+
+        it("returns false for non-empty string", () => {
+            const actual = isDefaultValue("a");
+            expect(actual).toBeFalsy();
+        });
+
+        it("returns false for non-empty array", () => {
+            const actual = isDefaultValue([1]);
+            expect(actual).toBeFalsy();
+        });
+
+        it("returns false for non-empty object literal", () => {
+            const actual = isDefaultValue({ version: "1.0" });
+            expect(actual).toBeFalsy();
+        });
+    });    
 });
