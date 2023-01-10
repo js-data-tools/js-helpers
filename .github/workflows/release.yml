@@ -1,4 +1,4 @@
-name: Release
+name: Semantic Release
 on:
   push:
     branches:
@@ -9,6 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        persist-credentials: false
 
     - name: Use Node.js 18
       uses: actions/setup-node@v3
@@ -39,7 +42,7 @@ jobs:
     - name: Install dependencies
       run: pnpm install
 
-    - name: Release
+    - name: Semantic release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

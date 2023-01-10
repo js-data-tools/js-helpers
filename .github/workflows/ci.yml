@@ -1,7 +1,7 @@
 name: Code coverage
 on: [push, pull_request]
 jobs:
-  build:
+  ci-tests:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
