@@ -20,6 +20,9 @@ coverage
 !.vscode/tasks.json
 !.vscode/extensions.json
 
+# Ignore package lock files (until Dependabot will start supporing it)
+pnpm-lock.yaml
+
 # Ignore local NPM configuration
 .npmrc
 .yarnrc
