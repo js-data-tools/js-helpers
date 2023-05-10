@@ -1,4 +1,11 @@
 {
+    "branches": [
+        "master",
+        {
+            "name": "feature/.+",
+            "channel": "dev-${name}"
+        }
+    ],
     "plugins": [
         "@semantic-release/commit-analyzer",
         "@semantic-release/release-notes-generator",
