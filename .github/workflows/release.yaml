@@ -3,12 +3,11 @@ on:
     branches:
       - master
 name: release-please
-permissions: {}
+permissions:
+  contents: write # to create release commit
+  pull-requests: write # to create release PR
 jobs:
   release-please:
-    permissions:
-      contents: write # to create release commit (google-github-actions/release-please-action)
-      pull-requests: write # to create release PR (google-github-actions/release-please-action)
     runs-on: ubuntu-latest
     steps:
       - uses: google-github-actions/release-please-action@v3
@@ -34,7 +33,7 @@ jobs:
         id: pnpm-cache
         shell: bash
         run: |
-            echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
         if: ${{ steps.release.outputs.release_created }}
       - name: Setup pnpm cache
         uses: actions/cache@v3
