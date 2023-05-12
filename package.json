@@ -1,6 +1,6 @@
 {
   "name": "@js-data-tools/js-helpers",
-  "version": "0.0.0-semantically-released",
+  "version": "1.0.0",
   "description": "A set of JavaScript / TypeScript helper functions for parsing, converting, transforming and formatting data.",
   "author": "Sergey Steinvil <sergey.steinvil@gmail.com>",
   "license": "MIT",
@@ -38,8 +38,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "doc:generate": "typedoc --gitRevision master --out docs/ref src/index.ts",
-    "semantic-release": "semantic-release"
+    "doc:generate": "typedoc --gitRevision master --out docs/ref src/index.ts"
   },
   "packageManager": "pnpm@7.23.0",
   "devDependencies": {
@@ -52,7 +51,6 @@
     "eslint": "8.40.0",
     "prettier": "2.8.8",
     "rimraf": "5.0.0",
-    "semantic-release": "21.0.2",
     "typedoc": "0.24.7",
     "typedoc-plugin-markdown": "3.15.3",
     "typescript": "5.0.4",
