@@ -40,7 +40,7 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "test:package": "node scripts/test-package.mjs",
-    "doc:generate": "typedoc --gitRevision master --out docs/ref src/index.ts"
+    "doc:generate": "typedoc --plugin typedoc-plugin-markdown --gitRevision master --markdown docs/ref --entryFileName modules --readme none src/index.ts"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",

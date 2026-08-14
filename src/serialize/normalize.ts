@@ -10,8 +10,8 @@ import { isDefaultValue, isEmptyValue } from "../predicates.js";
  * @category serialize
  * @since 0.3.0
  * @example
- * 
- * JSON.stringify({ 
+ *
+ * JSON.stringify({
  *      major: 1,
  *      minor: 0,           // Not empty
  *      patch: undefined,   // Empty
@@ -39,8 +39,8 @@ export function ignoreEmpty(key: string, value: any): any {
  * @category serialize
  * @since 0.3.0
  * @example
- * 
- * JSON.stringify({ 
+ *
+ * JSON.stringify({
  *      major: 1,
  *      minor: 0,           // Not empty
  *      patch: undefined,   // Empty
