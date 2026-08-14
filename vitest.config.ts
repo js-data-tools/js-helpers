@@ -6,7 +6,8 @@ export default defineConfig({
         coverage: {
             reporter: ["text", "lcovonly", "json-summary"],
             all: true,
-            include: ["src"]            
+            include: ["src"],
+            exclude: ["src/**/index.ts"],
         },
     },
 });

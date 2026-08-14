@@ -12,7 +12,6 @@ import { map, mapAsync } from "../iterable/index.js";
  */
 export function parseJsonLines<T>(
     textLines: Iterable<string>,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     reviver?: (this: any, key: string, value: any) => any
 ): Iterable<T> {
     return map(textLines, (line: string) => <T>JSON.parse(line, reviver));
