@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { map, mapAsync } from "../iterable";
+import { map, mapAsync } from "../iterable/index.js";
 
 /**
  * Parses an NDJSON stream

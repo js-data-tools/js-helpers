@@ -1,3 +1,3 @@
-export * from "./ip";
-export * from "./mac";
-export * from "./numeric";
+export * from "./ip.js";
+export * from "./mac.js";
+export * from "./numeric.js";

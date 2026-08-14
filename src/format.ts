@@ -1,4 +1,4 @@
-import { compactNumber, roundNumber } from "./convert/numeric";
+import { compactNumber, roundNumber } from "./convert/numeric.js";
 
 export const SI_SIZE_UNITS = ["B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"]; // Power of 1000
 export const IEC_SIZE_UNITS = ["B", "KiB", "MiB", "GiB", "TiB", "PiB", "EiB", "ZiB", "YiB"]; // Power of 1024

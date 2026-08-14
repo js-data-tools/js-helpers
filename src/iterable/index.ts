@@ -1,3 +1,3 @@
-export * from "./map";
-export * from "./select";
-export * from "./toArray";
+export * from "./map.js";
+export * from "./select.js";
+export * from "./toArray.js";

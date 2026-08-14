@@ -8,10 +8,7 @@
  * @returns {Promise<Array<T>>} A promise for the resulting array.
  */
 export async function toArrayAsync<T>(source: AsyncIterable<T>, target?: Array<T>): Promise<Array<T>> {
-    if (!target) {
-        // eslint-disable-next-line no-param-reassign
-        target = [];
-    }
+    target ??= [];
     for await (const item of source) {
         target.push(item);
     }

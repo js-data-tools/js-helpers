@@ -1,5 +1,3 @@
-/* eslint-disable no-bitwise */
-
 const bigint255 = BigInt(255);
 const bigint8 = BigInt(8);
 const macDelimiterPattern = /[-:]/g;
@@ -30,7 +28,7 @@ const macDelimiterPattern = /[-:]/g;
  * // => "00:0a:95:9d:68:16"
  */
 export function macAddressAsString(mac: bigint | string, format?: "-" | ":" | ""): string {
-    const delimiter = format === undefined ? "-" : format;
+    const delimiter = format ?? "-";
 
     if (typeof mac === "string") {
         if (mac.length !== 12 && mac.length !== 17) {
@@ -72,7 +70,7 @@ export function macAddressAsString(mac: bigint | string, format?: "-" | ":" | ""
     }
 
     if (typeof mac !== "bigint") {
-        throw new Error("Input should be either string or bigint");
+        throw new TypeError("Input should be either string or bigint");
     }
 
     const tokens: string[] = new Array<string>(6);

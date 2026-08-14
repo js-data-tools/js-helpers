@@ -16,8 +16,8 @@ export class ProgressReporter {
     count: number;
     duration: number;
     private lastReportTime: number;
-    private reportEvery: number;
-    private log: ProgressLogCallback;
+    private readonly reportEvery: number;
+    private readonly log: ProgressLogCallback;
 
     /**
      * Constructs a new ProgressReporter
@@ -90,8 +90,8 @@ export class ProgressReporter {
         process.stdout.write(ProgressReporter.formatMessage(duration, count, rate) + (completed ? "\n" : "\r"));
     }
 
-    static defaultLog: (duration: number, count: number, rate: number, completed: boolean) => void =
-        process && process.stdout ? ProgressReporter.logToStdOut : ProgressReporter.logToConsole;
+    static readonly defaultLog: (duration: number, count: number, rate: number, completed: boolean) => void =
+        process?.stdout ? ProgressReporter.logToStdOut : ProgressReporter.logToConsole;
 
     static formatMessage(duration: number, count: number, rate: number): string {
         return `Duration: ${duration / 1000} seconds, count: ${count}, rate: ${rate} entries/second`;

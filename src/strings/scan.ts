@@ -10,7 +10,7 @@ export const CHAR_CODE_BACKTICK = 96;
 
 export function skipUntilClosingQuote(text: string, start: number, quote: number): number {
     for (let i = start; i < text.length; ++i) {
-        const current = text.charCodeAt(i);
+        const current = text.codePointAt(i);
         if (current === quote) {
             return i;
         }
@@ -34,14 +34,17 @@ export function skipPairsUntil(text: string, start: number, symbol: string, thro
 export function skipPairsUntil(text: string, start: number, match: ((x: number) => boolean), throwOnMismatch?: boolean): number;
 export function skipPairsUntil(text: string, start: number, match: number | string | ((x: number) => boolean), throwOnMismatch?: boolean): number {
     const stack: number[] = [];
+    let matchValue: number | ((x: number) => boolean);
     if (typeof(match) === "string") {
-        match = match.charCodeAt(0);
+        matchValue = match.codePointAt(0) || 0;
+    } else {
+        matchValue = match;
     }
-    const matchSymbol = typeof(match) === "number" ? ((x:number) => x === match) : match;
+    const matchSymbol = typeof(matchValue) === "number" ? ((x:number) => x === matchValue) : matchValue;
 
     for (let i = start; i < text.length; ++i) {
-        const current = text.charCodeAt(i);
-        if (matchSymbol(current) && !stack.length) {
+        const current = text.codePointAt(i);
+        if (current !== undefined && matchSymbol(current) && !stack.length) {
             return i;
         }
 
@@ -63,7 +66,7 @@ export function skipPairsUntil(text: string, start: number, match: number | stri
                     const pending = stack.pop();
                     if (pending != current) {
                         if (throwOnMismatch !== false) {
-                            throw new Error(`Unexpected '${String.fromCharCode(current)}' at offset ${i}.  Expected '${pending ? String.fromCharCode(pending) : "(none)" }'`);
+                            throw new Error(`Unexpected '${String.fromCodePoint(current)}' at offset ${i}.  Expected '${pending ? String.fromCodePoint(pending) : "(none)" }'`);
                         }
                         return text.length;
                     }
@@ -82,7 +85,7 @@ export function skipPairsUntil(text: string, start: number, match: number | stri
     }
     
     if (throwOnMismatch !== false && stack.length) {
-        throw new Error(`There are ${stack.length} unclosed groups: '${stack.map(x => String.fromCharCode(x)).join("','")}'`);
+        throw new Error(`There are ${stack.length} unclosed groups: '${stack.map(x => String.fromCodePoint(x)).join("','")}'`);
     }
 
     return text.length;

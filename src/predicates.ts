@@ -86,7 +86,7 @@ export function isNonEmptyArray<T>(input: Array<T> | null | undefined): input is
  * @returns {boolean} true if given set is null, undefined or contains no elements.
  */
 export function isEmptySet<T>(input: Set<T> | null | undefined): boolean {
-    return !input || !input.size;
+    return !input?.size;
 }
 
 /**
@@ -110,7 +110,7 @@ export function isNonEmptySet<T>(input: Set<T> | null | undefined): input is Set
  * @returns {boolean} true if the given map object is null, undefined or contains no elements.
  */
 export function isEmptyMap<K, V>(input: Map<K, V> | null | undefined): boolean {
-    return !input || !input.size;
+    return !input?.size;
 }
 
 /**
@@ -188,16 +188,14 @@ export function isDefaultValue(value: unknown): boolean {
         return true;
     }
 
-    switch (typeof value) {
-        case "object":
-            if (Array.isArray(value)) {
-                return !value.length;
-            }
-            return !Object.keys(value).length;
-        
-        default:
-            return !value;
+    if (typeof value === "object") {
+        if (Array.isArray(value)) {
+            return !value.length;
+        }
+        return !Object.keys(value).length;
     }
+
+    return !value;
 }
 
 // ---------------------------------------------------------------------------------------
