@@ -23,6 +23,13 @@
       "minimumReleaseAge": "30 days",
       "internalChecksFilter": "strict",
       "automerge": false
+    },
+    {
+      "description": "Skip TypeScript 7.0.x until ESLint compatibility is restored",
+      "matchPackageNames": [
+        "typescript"
+      ],
+      "allowedVersions": "<7.0.0 || >=7.1.0"
     }
   ]
 }
