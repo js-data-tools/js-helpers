@@ -16,8 +16,8 @@ export class ProgressReporter {
     count: number;
     duration: number;
     private lastReportTime: number;
-    private reportEvery: number;
-    private log: ProgressLogCallback;
+    private readonly reportEvery: number;
+    private readonly log: ProgressLogCallback;
 
     /**
      * Constructs a new ProgressReporter

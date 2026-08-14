@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { isDefaultValue, isEmptyValue } from "../predicates";
+import { isDefaultValue, isEmptyValue } from "../predicates.js";
 
 /**
  * A reviver function for the JSON.stringify, which will remove properties with empty values:
@@ -164,7 +164,7 @@ export function reorderProperties<T = unknown>(
     inplace?: boolean
 ): Record<string, T> {
     if (!options.first?.length && !options.last?.length && !options.sort) {
-        return inplace !== false ? source : Object.assign({}, source);
+        return inplace !== false ? source : ({ ...source });
     }
 
     const keys = Object.keys(source);

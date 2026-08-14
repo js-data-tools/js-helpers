@@ -1,57 +1,57 @@
+name: release-please
+
 on:
   push:
     branches:
       - master
-name: release-please
-permissions:
-  contents: write # to create release commit
-  pull-requests: write # to create release PR
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   release-please:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
-      - uses: google-github-actions/release-please-action@v3
+      - name: Create release pull request or GitHub release
+        uses: googleapis/release-please-action@v5.0.0
         id: release
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           release-type: node
-          package-name: "@js-data-tools/js-helpers"
-      - uses: actions/checkout@v3
-      - name: Use Node.js 18
-        uses: actions/setup-node@v3
+
+      - name: Checkout repository
+        if: steps.release.outputs.release_created == 'true'
+        uses: actions/checkout@v7.0.1
         with:
-          node-version: 18
-        if: ${{ steps.release.outputs.release_created }}
+          persist-credentials: false
+
       - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        id: pnpm-install
+        if: steps.release.outputs.release_created == 'true'
+        uses: pnpm/action-setup@v6.0.10
         with:
-          version: 7
+          version: 11
           run_install: false
-        if: ${{ steps.release.outputs.release_created }}
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-        if: ${{ steps.release.outputs.release_created }}
-      - name: Setup pnpm cache
-        uses: actions/cache@v3
+
+      - name: Use Node.js 24
+        if: steps.release.outputs.release_created == 'true'
+        uses: actions/setup-node@v7.0.0
         with:
-          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-        if: ${{ steps.release.outputs.release_created }}
+          node-version: 24
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+          registry-url: https://registry.npmjs.org
+
       - name: Install dependencies
-        run: pnpm install
-        if: ${{ steps.release.outputs.release_created }}
-      - name: Set publishing config
-        run: pnpm config set '//registry.npmjs.org/:_authToken' "${NODE_AUTH_TOKEN}"
+        if: steps.release.outputs.release_created == 'true'
+        run: pnpm install --frozen-lockfile
+
+      - name: Publish package
+        if: steps.release.outputs.release_created == 'true'
+        run: pnpm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-        if: ${{ steps.release.outputs.release_created }}
-      - run: pnpm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-        if: ${{ steps.release.outputs.release_created }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

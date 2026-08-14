@@ -1,5 +1,3 @@
-/* eslint-disable no-bitwise */
-
 /**
  * An IPv4 address, represented either as string ("212.143.78.11") or as a 4-bytes integer (3566161419)
  */
@@ -66,7 +64,7 @@ export function ipv4AsNumber(ip: number | string): number {
     // Parse IPv4 address
     let result = 0;
     ip.split(".").forEach((token, i) => {
-        result += parseInt(token, 10) << (8 * (3 - i));
+        result += Number.parseInt(token, 10) << (8 * (3 - i));
     });
     return result >>> 0; // Make it unsigned
 }
