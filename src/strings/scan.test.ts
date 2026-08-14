@@ -59,4 +59,9 @@ describe("Test skipPairsUntil", () => {
         expect(actual).toBe(3);
     });
 
+    it("skipPairsUntil does not match an empty search string", () => {
+        const actual = skipPairsUntil("\0", 0, "");
+        expect(actual).toBe(1);
+    });
+
 });

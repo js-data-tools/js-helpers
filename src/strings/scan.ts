@@ -36,7 +36,7 @@ export function skipPairsUntil(text: string, start: number, match: number | stri
     const stack: number[] = [];
     let matchValue: number | ((x: number) => boolean);
     if (typeof(match) === "string") {
-        matchValue = match.codePointAt(0) || 0;
+        matchValue = match.codePointAt(0) ?? Number.NaN;
     } else {
         matchValue = match;
     }
