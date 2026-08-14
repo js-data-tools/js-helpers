@@ -90,9 +90,8 @@ export class ProgressReporter {
         process.stdout.write(ProgressReporter.formatMessage(duration, count, rate) + (completed ? "\n" : "\r"));
     }
 
-    /* v8 ignore next -- the browser fallback cannot run in the Node.js test environment */
-    static readonly defaultLog: (duration: number, count: number, rate: number, completed: boolean) => void =
-        process?.stdout ? ProgressReporter.logToStdOut : ProgressReporter.logToConsole;
+    static defaultLog: (duration: number, count: number, rate: number, completed: boolean) => void =
+        process && process.stdout ? ProgressReporter.logToStdOut : ProgressReporter.logToConsole;
 
     static formatMessage(duration: number, count: number, rate: number): string {
         return `Duration: ${duration / 1000} seconds, count: ${count}, rate: ${rate} entries/second`;
