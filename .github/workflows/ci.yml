@@ -50,7 +50,7 @@ jobs:
         run: pnpm test:package
 
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v7.0.0
+        uses: codecov/codecov-action@v7.1.1
         with:
           fail_ci_if_error: true
           use_oidc: true
